@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>About Us | ORGTING</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#ffdf9e",
+                        "surface-container-low": "#f3f3f3",
+                        "on-tertiary-fixed": "#261a00",
+                        "on-secondary-fixed-variant": "#5b4300",
+                        "secondary-fixed-dim": "#fbbd00",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#140c00",
+                        "inverse-primary": "#c8c6c5",
+                        "on-surface": "#1a1c1c",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#fbbd00",
+                        "on-background": "#1a1c1c",
+                        "secondary-container": "#febf00",
+                        "tertiary-fixed": "#ffdf9e",
+                        "surface-container": "#eeeeee",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "inverse-on-surface": "#f1f1f1",
+                        "outline-variant": "#c4c7c7",
+                        "tertiary-container": "#2f2100",
+                        "on-tertiary-container": "#b08300",
+                        "surface": "#f9f9f9",
+                        "surface-bright": "#f9f9f9",
+                        "primary": "#0d0d0d",
+                        "on-secondary-fixed": "#261a00",
+                        "primary-container": "#232323",
+                        "on-primary-fixed": "#1b1c1c",
+                        "surface-variant": "#e2e2e2",
+                        "secondary": "#795900",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#474746",
+                        "on-primary-container": "#8b8a8a",
+                        "outline": "#747878",
+                        "on-secondary-container": "#6c5000",
+                        "on-surface-variant": "#444748",
+                        "primary-fixed": "#e5e2e1",
+                        "inverse-surface": "#2f3131",
+                        "surface-container-highest": "#e2e2e2",
+                        "background": "#f9f9f9",
+                        "surface-dim": "#dadada",
+                        "surface-container-high": "#e8e8e8",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .tonal-shift-surface-container-low {
+            background-color: #f3f3f3;
+        }
+
+        .no-line {
+            border: none !important;
+        }
+
+        .headline-sm {
+            font-size: 1.5rem;
+            line-height: 2rem;
+        }
+    </style>
+</head>
+
+<body class="bg-surface font-body text-on-surface antialiased">
+    <nav class="fixed top-0 w-full z-50 bg-surface_bright/80 backdrop-blur-md shadow-xl shadow-black/10">
+        <div class="flex justify-between items-center max-w-7xl mx-auto px-8 h-20">
+
+            <!-- Logo -->
+            <div class="flex items-center gap-2.5">
+                <div class=" flex items-center justify-center">
+                    <img src="/assets/logo.webp" width="110" style="border-radius:10px;" />
+                </div>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8">
+
+                <!-- Active Link -->
+                <a href="index.html"
+                    class="text-on-surface-variant font-medium hover:text-secondary-container transition duration-300 relative after:absolute after:-bottom-1 after:left-0 after:w-0 hover:after:w-full after:h-[2px] after:bg-secondary-container after:transition-all after:duration-300">
+                    Home
+                </a>
+                <a href="#"
+                    class="text-on-surface-variant font-medium hover:text-secondary-container transition duration-300 relative after:absolute after:-bottom-1 after:left-0 after:w-0 hover:after:w-full after:h-[2px] after:bg-secondary-container after:transition-all after:duration-300">
+                    Services
+                </a>
+                <a href="about.html"
+                    class="relative text-secondary-container font-bold after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-secondary-container after:rounded-full">
+                    About Us
+                </a>
+            </div>
+
+            <!-- Right Side -->
+            <div class="flex items-center gap-4">
+
+                <!-- Language -->
+                <span class="hidden md:block text-on-surface-variant font-medium cursor-pointer hover:text-primary">
+                    AR/EN
+                </span>
+
+                <!-- Button -->
+                <a href="contact.html"
+                    class="hidden md:block bg-secondary-container text-on-secondary-fixed px-6 py-2.5 rounded-xl font-bold font-headline scale-95 active:scale-90 transition-transform shadow-lg shadow-secondary-container/20">
+                    Book a Call
+                </a>
+
+                <!-- Hamburger -->
+                <button id="menu-btn" class="md:hidden flex flex-col gap-1">
+                    <span class="w-6 h-0.5 bg-black"></span>
+                    <span class="w-6 h-0.5 bg-black"></span>
+                    <span class="w-6 h-0.5 bg-black"></span>
+                </button>
+
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden flex-col gap-6 p-5 bg-white border-t border-gray-200 md:hidden transition-all duration-300">
+            <div class="flex flex-col gap-6 pb-5">
+                <a href="index.html" class="text-secondary-container font-bold">Home</a>
+                <a href="#" class="text-on-surface-variant font-medium">Services</a>
+                <a href="about.html" class="text-on-surface-variant font-medium">About Us</a>
+            </div>
+
+            <div class="flex justify-between items-center pt-5 border-t">
+                <span class="text-on-surface-variant font-medium cursor-pointer hover:text-primary">AR/EN</span>
+                <button
+                    class="bg-secondary-container text-on-secondary-fixed px-6 py-2.5 rounded-xl font-bold font-headline scale-95 active:scale-90 transition-transform shadow-lg shadow-secondary-container/20">
+                    Book a Call
+                </button>
+            </div>
+
+        </div>
+    </nav>
+    <main class="pt-32">
+        <section class="max-w-7xl mx-auto px-8 mb-32">
+            <div class="grid grid-cols-12 gap-8 items-end">
+                <div class="col-span-12 md:col-span-8">
+                    <h1
+                        class="font-headline font-extrabold text-7xl md:text-8xl tracking-tighter text-primary leading-none mb-8">
+                        The Architecture <br /> of Excellence.
+                    </h1>
+                </div>
+                <div class="col-span-12 md:col-span-4 pb-4">
+                    <p
+                        class="text-on-surface-variant text-xl leading-relaxed font-light border-l-4 border-secondary-container pl-6">
+                        We transform organizational complexity into streamlined market dominance through precision
+                        engineering and strategic clarity.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="mb-32">
+            <div class="max-w-7xl mx-auto px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-surface-variant/30">
+                    <div class="bg-surface-container-lowest p-16 md:p-24 relative overflow-hidden group">
+                        <div class="relative z-10">
+                            <span
+                                class="text-secondary-container font-bold tracking-widest uppercase text-sm mb-6 block">Our
+                                Mission</span>
+                            <h2 class="font-headline font-bold text-4xl text-primary mb-8 leading-tight">To catalyze
+                                growth by building resilient organizational structures.</h2>
+                            <p class="text-on-surface-variant text-lg leading-relaxed max-w-md">
+                                We bridge the gap between visionary strategy and operational execution, ensuring every
+                                component of your business moves in perfect harmony toward a singular goal.
+                            </p>
+                        </div>
+                        <div
+                            class="absolute -right-12 -bottom-12 opacity-5 group-hover:opacity-10 transition-opacity duration-700">
+                            <span class="material-symbols-outlined text-[300px]"
+                                style="font-variation-settings: 'wght' 100;">architecture</span>
+                        </div>
+                    </div>
+                    <div class="bg-primary p-16 md:p-24 relative overflow-hidden group">
+                        <div class="relative z-10">
+                            <span
+                                class="text-secondary-fixed font-bold tracking-widest uppercase text-sm mb-6 block">Our
+                                Vision</span>
+                            <h2 class="font-headline font-bold text-4xl text-white mb-8 leading-tight">To become the
+                                global standard for high-performance business integration.</h2>
+                            <p class="text-gray-400 text-lg leading-relaxed max-w-md">
+                                We envision a corporate landscape where chaos is replaced by clarity, and where every
+                                organization possesses the structural integrity to withstand market volatility.
+                            </p>
+                        </div>
+                        <div
+                            class="absolute -right-12 -bottom-12 opacity-10 group-hover:opacity-20 transition-opacity duration-700">
+                            <span class="material-symbols-outlined text-[300px] text-white"
+                                style="font-variation-settings: 'wght' 100;">visibility</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-32 bg-surface-container-low">
+            <div class="max-w-7xl mx-auto px-8">
+                <div class="grid grid-cols-12 gap-12 items-center">
+                    <div class="col-span-12 lg:col-span-5">
+                        <h2 class="font-headline font-extrabold text-5xl text-primary mb-8 tracking-tight">The ORGTING
+                            Why</h2>
+                        <p class="text-on-surface-variant text-xl mb-12 leading-relaxed">
+                            Most firms offer fragmented advice. We provide a single point of accountability. Our
+                            multidisciplinary approach ensures that your strategy isn't just a document—it's an
+                            operational reality.
+                        </p>
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4 group">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center shrink-0 transition-transform group-hover:scale-110">
+                                    <span class="material-symbols-outlined text-secondary-container"
+                                        data-icon="account_balance">account_balance</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-primary text-lg">Single Accountability</h4>
+                                    <p class="text-on-surface-variant">One partner, one vision, total responsibility for
+                                        the outcome.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4 group">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center shrink-0 transition-transform group-hover:scale-110">
+                                    <span class="material-symbols-outlined text-secondary-container"
+                                        data-icon="hub">hub</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-primary text-lg">Integrated Synergy</h4>
+                                    <p class="text-on-surface-variant">Strategy, Tech, and Marketing working as a
+                                        unified machine.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-12 lg:col-span-7">
+                        <div class="grid grid-cols-2 gap-6">
+                            <div
+                                class="bg-surface-container-lowest p-8 rounded-xl shadow-xl shadow-black/5 border-l-2 border-secondary-container">
+                                <span class="material-symbols-outlined text-primary mb-4"
+                                    data-icon="strategy">strategy</span>
+                                <h3 class="font-headline font-bold text-xl mb-2">Strategy</h3>
+                                <p class="text-on-surface-variant text-sm">Long-term roadmap design and market
+                                    positioning.</p>
+                            </div>
+                            <div
+                                class="bg-surface-container-lowest p-8 rounded-xl shadow-xl shadow-black/5 border-l-2 border-secondary-container mt-8">
+                                <span class="material-symbols-outlined text-primary mb-4"
+                                    data-icon="settings_applications">settings_applications</span>
+                                <h3 class="font-headline font-bold text-xl mb-2">ERP</h3>
+                                <p class="text-on-surface-variant text-sm">Enterprise Resource Planning and process
+                                    automation.</p>
+                            </div>
+                            <div
+                                class="bg-surface-container-lowest p-8 rounded-xl shadow-xl shadow-black/5 border-l-2 border-secondary-container">
+                                <span class="material-symbols-outlined text-primary mb-4"
+                                    data-icon="campaign">campaign</span>
+                                <h3 class="font-headline font-bold text-xl mb-2">Marketing</h3>
+                                <p class="text-on-surface-variant text-sm">Brand authority and precision demand
+                                    generation.</p>
+                            </div>
+                            <div
+                                class="bg-surface-container-lowest p-8 rounded-xl shadow-xl shadow-black/5 border-l-2 border-secondary-container mt-8">
+                                <span class="material-symbols-outlined text-primary mb-4" data-icon="speed">speed</span>
+                                <h3 class="font-headline font-bold text-xl mb-2">Performance</h3>
+                                <p class="text-on-surface-variant text-sm">Continuous optimization and data-driven
+                                    scaling.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-32">
+            <div class="max-w-7xl mx-auto px-8">
+                <div class="text-center max-w-3xl mx-auto mb-20">
+                    <h2 class="font-headline font-extrabold text-5xl text-primary mb-6 tracking-tight">Our Core Values
+                    </h2>
+                    <p class="text-on-surface-variant text-lg">The principles that guide our every move and define the
+                        ORGTING standard.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="group cursor-default">
+                        <div class="mb-6 flex items-baseline gap-2">
+                            <span
+                                class="text-secondary-container font-headline font-black text-6xl opacity-20 group-hover:opacity-100 transition-opacity">01</span>
+                        </div>
+                        <h3 class="font-headline font-bold text-2xl text-primary mb-4">Insight-Led</h3>
+                        <p class="text-on-surface-variant leading-relaxed">We don't guess. We analyze data and market
+                            psychology to uncover the hidden leverage points in your business.</p>
+                    </div>
+                    <div class="group cursor-default">
+                        <div class="mb-6 flex items-baseline gap-2">
+                            <span
+                                class="text-secondary-container font-headline font-black text-6xl opacity-20 group-hover:opacity-100 transition-opacity">02</span>
+                        </div>
+                        <h3 class="font-headline font-bold text-2xl text-primary mb-4">Strategic</h3>
+                        <p class="text-on-surface-variant leading-relaxed">Every action must serve the long-term
+                            objective. We prioritize structural integrity over short-term hacks.</p>
+                    </div>
+                    <div class="group cursor-default">
+                        <div class="mb-6 flex items-baseline gap-2">
+                            <span
+                                class="text-secondary-container font-headline font-black text-6xl opacity-20 group-hover:opacity-100 transition-opacity">03</span>
+                        </div>
+                        <h3 class="font-headline font-bold text-2xl text-primary mb-4">Operational</h3>
+                        <p class="text-on-surface-variant leading-relaxed">Ideas are worthless without execution. We
+                            build systems that make excellence an inevitable daily habit.</p>
+                    </div>
+                    <div class="group cursor-default">
+                        <div class="mb-6 flex items-baseline gap-2">
+                            <span
+                                class="text-secondary-container font-headline font-black text-6xl opacity-20 group-hover:opacity-100 transition-opacity">04</span>
+                        </div>
+                        <h3 class="font-headline font-bold text-2xl text-primary mb-4">Partnership</h3>
+                        <p class="text-on-surface-variant leading-relaxed">We are not vendors; we are stakeholders in
+                            your success. Your growth is the only metric that matters.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-32 relative overflow-hidden bg-primary">
+            <div class="max-w-7xl mx-auto px-8 relative z-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h2 class="font-headline font-extrabold text-5xl text-white mb-8 tracking-tight">Ready to build
+                            your legacy?</h2>
+                        <p class="text-gray-400 text-xl mb-10">Let's discuss how we can bring architectural clarity to
+                            your organization.</p>
+                        <div class="flex flex-wrap gap-4">
+                            <button
+                                class="bg-secondary-container text-on-secondary-fixed px-10 py-4 rounded-xl font-bold font-headline transition-transform hover:scale-105 active:scale-95 shadow-xl shadow-secondary-container/20">
+                                Get Started
+                            </button>
+                            <button
+                                class="border-2 border-white/20 text-white px-10 py-4 rounded-xl font-bold font-headline hover:bg-white/10 transition-colors">
+                                View Case Studies
+                            </button>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div
+                            class="aspect-square bg-gradient-to-br from-primary-container to-black rounded-full absolute -top-24 -right-24 blur-3xl opacity-50">
+                        </div>
+                        <div
+                            class="relative bg-primary-container p-2 rounded-2xl overflow-hidden border border-white/10">
+                            <img class="rounded-xl grayscale hover:grayscale-0 transition-all duration-700 object-cover w-full h-[400px]"
+                                data-alt="Modern minimalist corporate office interior with glass walls, clean lines, and neutral tones under bright natural light"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAssrkaMYxxTR019s6QU839HpRo72NM89BcpHgQWSm7bkFXUTD6qSe_OHFbP_BrGfB0u2huYT_XkfwS-z_ShmHVnlCif46K35GmW92UU85FbIQVw7-ajOJY9PRcOOAMZNrl2rQujWRN95_tW9_yqyMmcasSEHMt4kRoQbjpMpswzeMZCRHFZmFrtEFibG5AVsBADqejG22Pt6UzX6ZJ8VFa4bxdX8OcLe3h8byW9sijHM4PxC9HDOsZMgyW-BJ_g7LME9BcwhoB7eMj" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-primary dark:bg-black w-full py-16 px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto">
+            <div class="col-span-1 md:col-span-1">
+                <div class="text-xl font-bold text-white mb-6 uppercase tracking-widest font-headline">ORGTING</div>
+                <p class="text-gray-400 font-inter text-body-md text-surface-variant leading-relaxed">
+                    © 2024 ORGTING. Chaos to Clarity. Transforming complexity into strategic advantage.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6">Quick Links</h4>
+                <ul class="space-y-4">
+                    <li><a class="text-gray-400 hover:text-white transition-all hover:translate-x-1 inline-block"
+                            href="#">Services</a></li>
+                    <li><a class="text-gray-400 hover:text-white transition-all hover:translate-x-1 inline-block"
+                            href="#">Contact</a></li>
+                    <li><a class="text-gray-400 hover:text-white transition-all hover:translate-x-1 inline-block"
+                            href="#">Newsletter</a></li>
+                    <li><a class="text-gray-400 hover:text-white transition-all hover:translate-x-1 inline-block"
+                            href="#">Privacy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6">Solutions</h4>
+                <ul class="space-y-4">
+                    <li><a class="text-gray-400 hover:text-white transition-all hover:translate-x-1 inline-block"
+                            href="#">Business Strategy</a></li>
+                    <li><a class="text-gray-400 hover:text-white transition-all hover:translate-x-1 inline-block"
+                            href="#">ERP Implementation</a></li>
+                    <li><a class="text-gray-400 hover:text-white transition-all hover:translate-x-1 inline-block"
+                            href="#">Growth Marketing</a></li>
+                    <li><a class="text-gray-400 hover:text-white transition-all hover:translate-x-1 inline-block"
+                            href="#">Performance Audit</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6">Connect</h4>
+                <div class="flex gap-4 mb-8">
+                    <a class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-secondary-container hover:bg-secondary-container hover:text-primary transition-all"
+                        href="#">
+                        <span class="material-symbols-outlined text-sm" data-icon="public">public</span>
+                    </a>
+                    <a class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-secondary-container hover:bg-secondary-container hover:text-primary transition-all"
+                        href="#">
+                        <span class="material-symbols-outlined text-sm" data-icon="link">link</span>
+                    </a>
+                </div>
+                <p class="text-gray-500 text-sm">Sub-header text indicating headquarters location or global presence.
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const btn = document.getElementById("menu-btn");
+        const menu = document.getElementById("mobile-menu");
+
+        btn.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+        });
+    </script>
+</body>
+
+</html>

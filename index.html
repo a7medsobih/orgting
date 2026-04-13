@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>ORGTING | From Chaos to Clarity</title>
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Inter:wght@400;500;600&amp;family=Poppins:wght@700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Icons -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#ffdf9e",
+                        "surface-container-low": "#f3f3f3",
+                        "on-tertiary-fixed": "#261a00",
+                        "on-secondary-fixed-variant": "#5b4300",
+                        "secondary-fixed-dim": "#fbbd00",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#140c00",
+                        "inverse-primary": "#c8c6c5",
+                        "on-surface": "#1a1c1c",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#fbbd00",
+                        "on-background": "#1a1c1c",
+                        "secondary-container": "#febf00",
+                        "tertiary-fixed": "#ffdf9e",
+                        "surface-container": "#eeeeee",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "inverse-on-surface": "#f1f1f1",
+                        "outline-variant": "#c4c7c7",
+                        "tertiary-container": "#2f2100",
+                        "on-tertiary-container": "#b08300",
+                        "surface": "#f9f9f9",
+                        "surface-bright": "#f9f9f9",
+                        "primary": "#0d0d0d",
+                        "on-secondary-fixed": "#261a00",
+                        "primary-container": "#232323",
+                        "on-primary-fixed": "#1b1c1c",
+                        "surface-variant": "#e2e2e2",
+                        "secondary": "#795900",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#474746",
+                        "on-primary-container": "#8b8a8a",
+                        "outline": "#747878",
+                        "on-secondary-container": "#6c5000",
+                        "on-surface-variant": "#444748",
+                        "primary-fixed": "#e5e2e1",
+                        "inverse-surface": "#2f3131",
+                        "surface-container-highest": "#e2e2e2",
+                        "background": "#f9f9f9",
+                        "surface-dim": "#dadada",
+                        "surface-container-high": "#e8e8e8",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .tonal-shift-surface-container-low {
+            background-color: #f3f3f3;
+        }
+
+        .tonal-shift-from-surface-to-primary {
+            background-color: #0d0d0d;
+        }
+
+        .no-line {
+            border: none !important;
+        }
+
+        .gold-gradient-cta {
+            background: linear-gradient(135deg, #ffc000 0%, #d4a000 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-surface font-body text-on-surface selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+    <!-- TopAppBar -->
+    <nav class="fixed top-0 w-full z-50 bg-surface_bright/80 bg-white backdrop-blur-md shadow-xl shadow-black/10">
+        <div class="flex justify-between items-center max-w-7xl mx-auto px-8 h-20">
+
+            <!-- Logo -->
+            <div class="flex items-center gap-2.5">
+                <div class=" flex items-center justify-center">
+                    <img src="/assets/logo.webp" width="110" style="border-radius:10px;" />
+                </div>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8">
+
+                <!-- Active Link -->
+                <a href="#"
+                    class="relative text-secondary-container font-bold after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-secondary-container after:rounded-full">
+                    Home
+                </a>
+                <a href="#"
+                    class="text-on-surface-variant font-medium hover:text-secondary-container transition duration-300 relative after:absolute after:-bottom-1 after:left-0 after:w-0 hover:after:w-full after:h-[2px] after:bg-secondary-container after:transition-all after:duration-300">
+                    Services
+                </a>
+                <a href="about.html"
+                    class="text-on-surface-variant font-medium hover:text-secondary-container transition duration-300 relative after:absolute after:-bottom-1 after:left-0 after:w-0 hover:after:w-full after:h-[2px] after:bg-secondary-container after:transition-all after:duration-300">
+                    About Us
+                </a>
+            </div>
+
+            <!-- Right Side -->
+            <div class="flex items-center gap-4">
+
+                <!-- Language -->
+                <span class="hidden md:block text-on-surface-variant font-medium cursor-pointer hover:text-primary">
+                    AR/EN
+                </span>
+
+                <!-- Button -->
+                <a href="contact.html"
+                    class="hidden md:block bg-secondary-container text-on-secondary-fixed px-6 py-2.5 rounded-xl font-bold font-headline scale-95 active:scale-90 transition-transform shadow-lg shadow-secondary-container/20">
+                    Book a Call
+                </a>
+
+                <!-- Hamburger -->
+                <button id="menu-btn" class="md:hidden flex flex-col gap-1">
+                    <span class="w-6 h-0.5 bg-black"></span>
+                    <span class="w-6 h-0.5 bg-black"></span>
+                    <span class="w-6 h-0.5 bg-black"></span>
+                </button>
+
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden flex-col gap-6 p-5 bg-white border-t border-gray-200 md:hidden transition-all duration-300">
+            <div class="flex flex-col gap-6 pb-5">
+                <a href="#" class="text-secondary-container font-bold">Home</a>
+                <a href="#" class="text-on-surface-variant font-medium">Services</a>
+                <a href="#" class="text-on-surface-variant font-medium">About Us</a>
+            </div>
+
+            <div class="flex justify-between items-center pt-5 border-t">
+                <span class="text-on-surface-variant font-medium cursor-pointer hover:text-primary">AR/EN</span>
+                <button
+                    class="bg-secondary-container text-on-secondary-fixed px-6 py-2.5 rounded-xl font-bold font-headline scale-95 active:scale-90 transition-transform shadow-lg shadow-secondary-container/20">
+                    Book a Call
+                </button>
+            </div>
+
+        </div>
+    </nav>
+    <main class="">
+        <!-- Hero Section -->
+        <section class="relative bg-primary-container h-screen flex items-center overflow-hidden">
+            <div class="absolute inset-0 opacity-20 pointer-events-none">
+                <div
+                    class="absolute top-0 right-0 w-[800px] h-[800px] bg-secondary-container/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-white/5 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4">
+                </div>
+            </div>
+            <div class="max-w-7xl mx-auto px-8 w-full grid grid-cols-12 gap-8 relative z-10">
+                <div class="col-span-12 md:col-span-8 lg:col-span-7">
+                    <div
+                        class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-8">
+                        <span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+                        <span class="text-white/60 text-xs font-bold tracking-widest uppercase">Systemic
+                            Architecture</span>
+                    </div>
+                    <h1
+                        class="text-white font-headline text-6xl md:text-8xl font-black leading-[0.9] tracking-tighter mb-8">
+                        From Chaos <br />
+                        <span class="text-secondary-container">to Clarity</span>
+                    </h1>
+                    <p class="text-surface-variant text-xl md:text-2xl max-w-xl leading-relaxed mb-12 font-light">
+                        We transform fragmented operations into high-performance structural systems for leaders who
+                        demand precision.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button
+                            class="gold-gradient-cta text-on-secondary-fixed font-bold py-4 px-10 rounded-xl text-lg hover:-translate-y-0.5 transition-all shadow-xl shadow-secondary-container/10">
+                            Book a Strategy Call
+                        </button>
+                        <button
+                            class="bg-white/5 text-white font-semibold py-4 px-10 rounded-xl text-lg border border-white/10 hover:bg-white/10 transition-all">
+                            View Case Studies
+                        </button>
+                    </div>
+                </div>
+                <div class="hidden lg:block lg:col-span-5 relative">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-primary-container to-transparent z-10"></div>
+                    <img class="w-full h-full object-cover rounded-2xl grayscale contrast-125 opacity-60"
+                        data-alt="Interior of a modern high-end office with glass partitions, architectural lines, and dramatic lighting on steel and concrete surfaces"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuATkhAmOBwwSLZyqcI6A_KgUH4CHi9FaHGNnY6TyjRG3lZ3DdkIPuz0JNr5zLVRxX-EBklnRtM0k5jwIzQs-mkd1HkjZiDnQjrZiZ-IVEShhmSw_GFz9aHuuj2BPOfsJhpODrU25ii8qk4d-A7VuPgUDvnbpimXVvAeI2hVmuNoTVm6EVKet_rjdBRpnO04qDqWOx1lHIK0TdyTv06DAF-JSQoTfUGnleHH2tdtE5MBOBwplIlaO-9ZQvqJqjEmZZtwDlzZYlVMCPxT" />
+                </div>
+            </div>
+        </section>
+        <!-- Problem Statement -->
+        <section class="py-32 bg-surface">
+            <div class="max-w-7xl mx-auto px-8">
+                <div class="grid grid-cols-12 gap-12 items-end">
+                    <div class="col-span-12 md:col-span-6">
+                        <span class="text-secondary font-bold tracking-widest uppercase text-sm mb-4 block">The Critical
+                            Gap</span>
+                        <h2
+                            class="text-primary font-headline text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
+                            The Structural <br /> Misalignment.
+                        </h2>
+                    </div>
+                    <div class="col-span-12 md:col-span-6">
+                        <p
+                            class="text-on-surface-variant text-lg leading-relaxed border-l-2 border-secondary-container pl-8">
+                            Most organizations fail not due to lack of talent, but because of architectural friction.
+                            When growth outpaces infrastructure, chaos becomes the default. We identify the invisible
+                            fractures in your operation before they become catastrophic breaks.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution Overview (Bento Grid) -->
+        <section class="py-32 bg-surface-container-lowest">
+            <div class="max-w-7xl mx-auto px-8">
+                <div class="text-center mb-20">
+                    <h2 class="text-primary font-headline text-4xl font-black mb-4">Our Framework</h2>
+                    <div class="h-1 w-20 bg-secondary-container mx-auto"></div>
+                </div>
+                <div class="grid grid-cols-12 gap-6">
+                    <div
+                        class="col-span-12 md:col-span-8 bg-surface-container-lowest p-10 rounded-xl relative overflow-hidden group">
+                        <div class="absolute top-0 left-0 w-1 h-full bg-secondary-container"></div>
+                        <div class="relative z-10">
+                            <span
+                                class="material-symbols-outlined text-4xl text-secondary-container mb-6">architecture</span>
+                            <h3 class="text-2xl font-bold mb-4">Scalable Systems Architecture</h3>
+                            <p class="text-on-surface-variant max-w-lg">We don't just fix problems; we rebuild the
+                                foundations. Our systems are engineered to handle 10x growth without operational
+                                degradation.</p>
+                        </div>
+                        <img class="absolute bottom-0 right-0 w-1/2 h-full object-cover opacity-5 grayscale group-hover:opacity-10 transition-opacity"
+                            data-alt="Low angle view of a modern glass skyscraper with geometric patterns reflecting the sky"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPBgm9UmwLVzpWZ8kGYZ_b9L6ZPSv7A6mUwKXcWqt41uMDB7xnjxZmh0yX1zV-TT1t-gc_frfF7g4Qd3cqrQWwKl8W3ZlkquLN-obKQL5x-m7ned3dQcRVf7QWtVs7nf3198dbB_VEQM5A9chr_ln8BaY4-p7fCyRq3Yp3c98Mry-lW6xgKOp0jP5rMXas7VunMuz4k3yLWX10Nr_hApc2VpdYUyZ_PYVok8nrw8qlVNgL6bbXhrmBQFrRmKXkdqnQC_u-az0QzqpN" />
+                    </div>
+                    <div class="col-span-12 md:col-span-4 bg-primary p-10 rounded-xl relative">
+                        <div class="absolute top-0 left-0 w-1 h-full bg-secondary-container"></div>
+                        <span class="material-symbols-outlined text-4xl text-secondary-container mb-6">insights</span>
+                        <h3 class="text-2xl font-bold mb-4 text-white">Data-Driven Clarity</h3>
+                        <p class="text-surface-variant">Converting noise into actionable intelligence through refined
+                            telemetry and KPIs.</p>
+                    </div>
+                    <div class="col-span-12 md:col-span-4 bg-surface-container-lowest p-10 rounded-xl relative">
+                        <div class="absolute top-0 left-0 w-1 h-full bg-secondary-container"></div>
+                        <span class="material-symbols-outlined text-4xl text-secondary-container mb-6">group_work</span>
+                        <h3 class="text-2xl font-bold mb-4">Workflow Integration</h3>
+                        <p class="text-on-surface-variant">Seamlessly connecting human talent with automated efficiency.
+                        </p>
+                    </div>
+                    <div class="col-span-12 md:col-span-8 bg-surface-container-high p-10 rounded-xl relative">
+                        <div class="absolute top-0 left-0 w-1 h-full bg-secondary-container"></div>
+                        <div class="flex flex-col md:flex-row items-center gap-8">
+                            <div class="flex-1">
+                                <h3 class="text-2xl font-bold mb-4">The Result: Absolute Control</h3>
+                                <p class="text-on-surface-variant">Transition from reactive management to proactive
+                                    stewardship of your organization's destiny.</p>
+                            </div>
+                            <div class="bg-primary-container p-6 rounded-xl text-center min-w-[180px]">
+                                <div class="text-secondary-container text-4xl font-black mb-1">94%</div>
+                                <div class="text-white text-[10px] uppercase tracking-widest font-bold">Efficiency Gain
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW Strategic Services Grid -->
+        <section class="py-32 bg-gray-100">
+            <div class="max-w-7xl mx-auto px-8">
+                <div class="mb-16">
+                    <span class="text-secondary font-bold tracking-widest uppercase text-sm mb-4 block">Our
+                        Capabilities</span>
+                    <h2 class="text-primary font-headline text-4xl font-black">Strategic Services</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Strategic Management -->
+                    <div
+                        class="bg-surface-container-lowest p-10 rounded-xl card-shadow border-t-4 border-secondary-container flex flex-col justify-between group">
+                        <div>
+                            <span class="material-symbols-outlined text-4xl text-primary mb-6">account_balance</span>
+                            <h3 class="text-2xl font-bold mb-4 font-headline">Strategic Management</h3>
+                            <p class="text-on-surface-variant leading-relaxed mb-8">Transform gut feelings into
+                                calculated
+                                legacy. Clear direction, KPI frameworks, governance models, and a roadmap that actually
+                                works.
+                            </p>
+                        </div>
+                        <button
+                            class="gold-gradient-cta text-on-secondary-fixed font-bold py-3 px-8 rounded-lg self-start transition-all hover:shadow-lg hover:-translate-y-0.5">
+                            Explore Framework
+                        </button>
+                    </div>
+                    <!-- Organization Design -->
+                    <div
+                        class="bg-surface-container-lowest p-10 rounded-xl card-shadow border-t-4 border-secondary-container flex flex-col justify-between group">
+                        <div>
+                            <span class="material-symbols-outlined text-4xl text-primary mb-6">schema</span>
+                            <h3 class="text-2xl font-bold mb-4 font-headline">Organization Design</h3>
+                            <p class="text-on-surface-variant leading-relaxed mb-8">Build the internal engine. Workflow
+                                restructuring, accountability systems, and leadership alignment — until the system runs
+                                itself.
+                            </p>
+                        </div>
+                        <button
+                            class="gold-gradient-cta text-on-secondary-fixed font-bold py-3 px-8 rounded-lg self-start transition-all hover:shadow-lg hover:-translate-y-0.5">
+                            View System
+                        </button>
+                    </div>
+                    <!-- Marketing Solutions -->
+                    <div
+                        class="bg-surface-container-lowest p-10 rounded-xl card-shadow border-t-4 border-secondary-container flex flex-col justify-between group">
+                        <div>
+                            <span class="material-symbols-outlined text-4xl text-primary mb-6">campaign</span>
+                            <h3 class="text-2xl font-bold mb-4 font-headline">Marketing Solutions</h3>
+                            <p class="text-on-surface-variant leading-relaxed mb-8">Brand strategy, content marketing,
+                                positioning, performance — to be seen in the market and outpace competitors.</p>
+                        </div>
+                        <button
+                            class="gold-gradient-cta text-on-secondary-fixed font-bold py-3 px-8 rounded-lg self-start transition-all hover:shadow-lg hover:-translate-y-0.5">
+                            Master Market
+                        </button>
+                    </div>
+                    <!-- Website Design & Development -->
+                    <div
+                        class="bg-surface-container-lowest p-10 rounded-xl card-shadow border-t-4 border-secondary-container flex flex-col justify-between group">
+                        <div>
+                            <span class="material-symbols-outlined text-4xl text-primary mb-6">web</span>
+                            <h3 class="text-2xl font-bold mb-4 font-headline">Website Design &amp; Development</h3>
+                            <p class="text-on-surface-variant leading-relaxed mb-8">Scalable, UX-driven digital systems.
+                                Websites built with ORGTING thinking: structure, system, and conversion at every layer.
+                            </p>
+                        </div>
+                        <button
+                            class="gold-gradient-cta text-on-secondary-fixed font-bold py-3 px-8 rounded-lg self-start transition-all hover:shadow-lg hover:-translate-y-0.5">
+                            Launch Digital
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Categories -->
+        <section class="py-32 bg-surface">
+            <div class="max-w-7xl mx-auto px-8">
+                <div class="flex justify-between items-end mb-16">
+                    <div>
+                        <span
+                            class="text-secondary font-bold tracking-widest uppercase text-sm mb-4 block">Specializations</span>
+                        <h2 class="text-primary font-headline text-4xl font-black">Strategic Domains</h2>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Business -->
+                    <div class="group cursor-pointer">
+                        <div class="aspect-[4/5] overflow-hidden rounded-xl mb-6 relative">
+                            <img class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-110"
+                                data-alt="Modern boardroom with minimalist design and natural light"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuACezSan-nNayBrVfc_R5BTkbY4GYvPKtUUBMmwerwX-2ZBk1Ts2LspY7sPvyv48Hz6crCkE_LvpcJLGdfi6ti1cVMCxjQM26Y71T3SnauSy7Ox8jhehHXC1VWY6j9atCmcRdvGfA1yUR7gsyOf8k_BCoWjCeTS6nwmFVJERJPCQldbMxajd_-DoJ6VbUbZ0By1xLghPeTcJHdTtoguL7Ek4g6BFa1GK1faMYek6Ls2zv-CR2vBLC56dshNw_XbtfmJUAiTAJShttHk" />
+                            <div class="absolute inset-0 bg-primary/40 group-hover:bg-primary/20 transition-colors">
+                            </div>
+                            <div class="absolute bottom-8 left-8">
+                                <span class="material-symbols-outlined text-white text-5xl mb-4">corporate_fare</span>
+                                <h4 class="text-white text-2xl font-bold">Business</h4>
+                            </div>
+                        </div>
+                        <p class="text-on-surface-variant leading-relaxed mb-6">Corporate restructuring, operational
+                            scaling, and strategic alignment for enterprise teams.</p>
+                    </div>
+                    <!-- Personal -->
+                    <div class="group cursor-pointer">
+                        <div class="aspect-[4/5] overflow-hidden rounded-xl mb-6 relative">
+                            <img class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-110"
+                                data-alt="Minimalist study room with a single designer chair and clean lines"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1duUtPvIYnpp8KM57_uyoIRArtdzqYabfYydViv2wRzyK9YvO6QkflxtFAbGWpgWEtrhmnRDciZ6ZKIGsDvsoG3-ZnNHc-18wuOT6E7T0rNeED4rtmvtkhMiS1rdiSws_Q9dRwVScR0vlCa5QP9l8ZrWodL7kDHa6a3Tfa_0o5h0kifbH-X-Awczm7LE1PgKIaoEeqtsE9gqhtHqxffOXGMzrgAhh5e9mG-d0bk8_AZM0NzGLAMJjkiTycKJ4vtNAuyjaGgIXnxQ8" />
+                            <div class="absolute inset-0 bg-primary/40 group-hover:bg-primary/20 transition-colors">
+                            </div>
+                            <div class="absolute bottom-8 left-8">
+                                <span class="material-symbols-outlined text-white text-5xl mb-4">person_celebrate</span>
+                                <h4 class="text-white text-2xl font-bold">Personal</h4>
+                            </div>
+                        </div>
+                        <p class="text-on-surface-variant leading-relaxed mb-6">Executive optimization, high-performance
+                            routines, and mental clarity frameworks for founders.</p>
+                    </div>
+                    <!-- Digital -->
+                    <div class="group cursor-pointer">
+                        <div class="aspect-[4/5] overflow-hidden rounded-xl mb-6 relative">
+                            <img class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-110"
+                                data-alt="High tech server room with glowing lights and structural cable management"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9TrVWIw0uvDwf5tFDagdxY-7BNGmt0e-R9Fmx5oOBov6iIbBBiYZv_ARcnoWUbciSmAR82146kHD1UdPn7VS9Th_eMXlK3PhDu8P_QsjHV685nAX62WdpWMILiFLYDH5RIlGaOBLmA-XFVxTaNog1bwZmaIMGSGY93JbWdWRjdcXYB378HoMIv0O1xBlXVZ3z2IlPkvhv3J5JocUcndEp4WWjAe09NecMOIMMS-fO_nCw8pnf_tI3ru2IO_sW-Lyl6Y08bm08ptIa" />
+                            <div class="absolute inset-0 bg-primary/40 group-hover:bg-primary/20 transition-colors">
+                            </div>
+                            <div class="absolute bottom-8 left-8">
+                                <span
+                                    class="material-symbols-outlined text-white text-5xl mb-4">settings_ethernet</span>
+                                <h4 class="text-white text-2xl font-bold">Digital</h4>
+                            </div>
+                        </div>
+                        <p class="text-on-surface-variant leading-relaxed mb-6">Software ecosystem audits, automation
+                            pipelines, and data governance for digital-first brands.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Proof -->
+        <section class="py-24 bg-surface-container">
+            <div class="max-w-7xl mx-auto px-8">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+                    <div class="text-center md:text-left">
+                        <div class="text-primary font-headline text-5xl font-black mb-2">40+</div>
+                        <div class="text-on-surface-variant font-bold tracking-widest uppercase text-xs">Transformations
+                            Led</div>
+                    </div>
+                    <div
+                        class="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-40 grayscale contrast-125">
+                        <span class="font-headline font-black text-2xl tracking-tighter">NEXUS.CORP</span>
+                        <span class="font-headline font-black text-2xl tracking-tighter">VANTAGE</span>
+                        <span class="font-headline font-black text-2xl tracking-tighter">AXON</span>
+                        <span class="font-headline font-black text-2xl tracking-tighter">LEVEL.UP</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Final CTA -->
+        <section class="py-32 bg-primary relative overflow-hidden">
+            <div class="max-w-4xl mx-auto px-8 text-center relative z-10">
+                <h2 class="text-white font-headline text-5xl md:text-6xl font-black mb-8 leading-tight">
+                    Ready to achieve <br /> <span class="text-secondary-container">Absolute Clarity?</span>
+                </h2>
+                <p class="text-surface-variant text-xl mb-12 max-w-2xl mx-auto">
+                    Take the first step toward a friction-less organization. Our strategy calls are high-intensity
+                    alignment sessions.
+                </p>
+                <button
+                    class="gold-gradient-cta text-on-secondary-fixed font-bold py-5 px-12 rounded-xl text-xl hover:scale-105 active:scale-95 transition-all shadow-2xl shadow-secondary-container/20">
+                    Book a Strategy Call
+                </button>
+            </div>
+            <div class="absolute bottom-0 left-0 w-full h-1 bg-secondary-container"></div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-primary dark:bg-black w-full py-16 px-8 no-line">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto">
+            <div class="col-span-1 md:col-span-1">
+                <div class="text-xl font-bold text-white mb-6 font-headline">ORGTING</div>
+                <p class="font-inter text-body-md text-surface-variant leading-relaxed">
+                    © 2024 ORGTING. Chaos to Clarity.
+                </p>
+            </div>
+            <div>
+                <h5 class="text-white font-bold mb-6 text-sm uppercase tracking-widest">Services</h5>
+                <ul class="space-y-4">
+                    <li><a class="text-gray-400 hover:text-white hover:translate-x-1 transition-all duration-200 inline-block font-inter text-body-md"
+                            href="#">Services</a></li>
+                    <li><a class="text-gray-400 hover:text-white hover:translate-x-1 transition-all duration-200 inline-block font-inter text-body-md"
+                            href="#">Contact</a></li>
+                    <li><a class="text-gray-400 hover:text-white hover:translate-x-1 transition-all duration-200 inline-block font-inter text-body-md"
+                            href="#">Newsletter</a></li>
+                    <li><a class="text-gray-400 hover:text-white hover:translate-x-1 transition-all duration-200 inline-block font-inter text-body-md"
+                            href="#">Privacy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-white font-bold mb-6 text-sm uppercase tracking-widest">Insights</h5>
+                <ul class="space-y-4">
+                    <li><a class="text-gray-400 hover:text-white hover:translate-x-1 transition-all duration-200 inline-block font-inter text-body-md"
+                            href="#">Structure Lab</a></li>
+                    <li><a class="text-gray-400 hover:text-white hover:translate-x-1 transition-all duration-200 inline-block font-inter text-body-md"
+                            href="#">Resource Center</a></li>
+                    <li><a class="text-gray-400 hover:text-white hover:translate-x-1 transition-all duration-200 inline-block font-inter text-body-md"
+                            href="#">White Papers</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-white font-bold mb-6 text-sm uppercase tracking-widest">Connect</h5>
+                <div class="flex space-x-6">
+                    <a class="text-secondary-container hover:text-white transition-colors" href="#">
+                        <span class="material-symbols-outlined">share</span>
+                    </a>
+                    <a class="text-secondary-container hover:text-white transition-colors" href="#">
+                        <span class="material-symbols-outlined">alternate_email</span>
+                    </a>
+                </div>
+                <div class="mt-8">
+                    <p class="text-gray-400 text-xs italic">Architecting tomorrow's leading organizations.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById("menu-btn");
+        const menu = document.getElementById("mobile-menu");
+
+        btn.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+        });
+    </script>
+</body>
+
+</html>

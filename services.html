@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>ORGTING | Services Hub</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#ffdf9e",
+                        "surface-container-low": "#f3f3f3",
+                        "on-tertiary-fixed": "#261a00",
+                        "on-secondary-fixed-variant": "#5b4300",
+                        "secondary-fixed-dim": "#fbbd00",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#140c00",
+                        "inverse-primary": "#c8c6c5",
+                        "on-surface": "#1a1c1c",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#fbbd00",
+                        "on-background": "#1a1c1c",
+                        "secondary-container": "#febf00",
+                        "tertiary-fixed": "#ffdf9e",
+                        "surface-container": "#eeeeee",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "inverse-on-surface": "#f1f1f1",
+                        "outline-variant": "#c4c7c7",
+                        "tertiary-container": "#2f2100",
+                        "on-tertiary-container": "#b08300",
+                        "surface": "#f9f9f9",
+                        "surface-tint": "#5f5e5e",
+                        "on-tertiary-fixed-variant": "#5b4300",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#f9f9f9",
+                        "primary": "#0d0d0d",
+                        "on-secondary-fixed": "#261a00",
+                        "primary-container": "#232323",
+                        "on-primary-fixed": "#1b1c1c",
+                        "surface-variant": "#e2e2e2",
+                        "secondary": "#795900",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#474746",
+                        "on-primary-container": "#8b8a8a",
+                        "outline": "#747878",
+                        "on-secondary-container": "#6c5000",
+                        "on-surface-variant": "#444748",
+                        "primary-fixed": "#e5e2e1",
+                        "inverse-surface": "#2f3131",
+                        "surface-container-highest": "#e2e2e2",
+                        "background": "#f9f9f9",
+                        "surface-dim": "#dadada",
+                        "surface-container-high": "#e8e8e8",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .signature-cta {
+            background: linear-gradient(135deg, #febf00 0%, #5b4300 100%);
+        }
+
+        .tonal-shift-surface-container-low {
+            background-color: rgba(243, 243, 243, 0.8);
+        }
+
+        .glass-header {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+
+<body class="bg-surface text-on-surface font-body selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+    <!-- TopAppBar -->
+    <nav class="fixed top-0 w-full z-50 bg-surface_bright/80 backdrop-blur-md shadow-2xl shadow-black/5 h-20">
+        <div class="flex justify-between items-center max-w-7xl mx-auto px-8 h-full">
+            <div class="text-2xl font-black tracking-tighter text-primary dark:text-white uppercase font-headline">
+                ORGTING
+            </div>
+            <div class="hidden md:flex items-center space-gap-8 gap-x-8">
+                <a class="text-secondary-container font-bold border-b-2 border-secondary-container hover:text-secondary-container transition-colors duration-300"
+                    href="#">Solutions</a>
+                <a class="text-on-surface-variant font-medium hover:text-secondary-container transition-colors duration-300"
+                    href="#">Insights</a>
+                <a class="text-on-surface-variant font-medium hover:text-secondary-container transition-colors duration-300"
+                    href="#">About</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button
+                    class="text-on-surface-variant font-medium hover:text-secondary-container transition-all text-sm">AR/EN</button>
+                <button
+                    class="signature-cta text-on-secondary-fixed px-6 py-2.5 rounded-xl font-bold transition-transform scale-95 active:scale-90 shadow-lg shadow-secondary-container/20">
+                    Book a Call
+                </button>
+            </div>
+        </div>
+    </nav>
+    <main class="pt-32 pb-24">
+        <!-- Hero Header -->
+        <header class="max-w-7xl mx-auto px-8 mb-24">
+            <div class="grid grid-cols-12 gap-8">
+                <div class="col-span-12 md:col-span-8">
+                    <span
+                        class="text-secondary-container font-bold tracking-widest uppercase text-sm mb-4 block">Architectural
+                        Authority</span>
+                    <h1
+                        class="text-6xl md:text-8xl font-black font-headline tracking-tighter text-primary leading-[0.9] mb-8">
+                        Chaos to <br /><span class="text-secondary-container">Clarity.</span>
+                    </h1>
+                    <p class="text-xl text-on-surface-variant max-w-xl leading-relaxed">
+                        Precision-engineered systems for business growth, personal brand dominance, and seamless digital
+                        infrastructure.
+                    </p>
+                </div>
+            </div>
+        </header>
+        <!-- Services Hub: The Three Pillars -->
+        <section class="max-w-7xl mx-auto px-8 space-y-32">
+            <!-- Pillar 1: Business Transformation -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-5 order-2 md:order-1">
+                    <div class="inline-flex items-center gap-2 mb-6 text-secondary font-bold">
+                        <span class="material-symbols-outlined" data-icon="corporate_fare">corporate_fare</span>
+                        <span class="uppercase tracking-widest text-xs">Pillar 01</span>
+                    </div>
+                    <h2 class="text-4xl font-black font-headline text-primary mb-6">Business Transformation</h2>
+                    <p class="text-on-surface-variant mb-10 leading-relaxed">Structural optimization for organizations
+                        that demand peak efficiency and market authority.</p>
+                    <div class="space-y-4">
+                        <!-- Card 1 -->
+                        <div
+                            class="bg-surface-container-lowest p-6 rounded-xl border-l-2 border-secondary-container shadow-sm group hover:translate-x-2 transition-all duration-300">
+                            <h3 class="font-bold text-lg text-primary mb-1">Strategic Management</h3>
+                            <p class="text-sm text-on-surface-variant">Defining clear North Star objectives and
+                                operational roadmaps.</p>
+                        </div>
+                        <!-- Card 2 -->
+                        <div
+                            class="bg-surface-container-lowest p-6 rounded-xl border-l-2 border-secondary-container shadow-sm group hover:translate-x-2 transition-all duration-300">
+                            <h3 class="font-bold text-lg text-primary mb-1">Organization Design</h3>
+                            <p class="text-sm text-on-surface-variant">Building scalable structures that remove
+                                bottlenecks.</p>
+                        </div>
+                        <!-- Card 3 -->
+                        <div
+                            class="bg-surface-container-lowest p-6 rounded-xl border-l-2 border-secondary-container shadow-sm group hover:translate-x-2 transition-all duration-300">
+                            <h3 class="font-bold text-lg text-primary mb-1">Marketing Strategy</h3>
+                            <p class="text-sm text-on-surface-variant">Authority-based positioning that dominates the
+                                niche.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-span-7 order-1 md:order-2">
+                    <div class="relative rounded-2xl overflow-hidden aspect-[16/10] bg-surface-container">
+                        <img alt="Modern Office"
+                            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                            data-alt="high-contrast wide shot of a minimalist modern glass office building interior with sharp angles and clean lines in soft daylight"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAXw13CYMPoC0n8_vk9ZzlgbzgqTfkc3lz8JWXvCan2lxqvLTOOHhc25Ozgb764hf90ta2uCh4oWQkp352G1ycKsW-GndLiBzIU2Ni0JTjRSUTlD_i8H7q5B5dU-gjJ-dOSPhei1URIuNJWNv7q2nwDsyu2v5U0bvD7Bvy26fcdl8Wx3bbLEG8lmQ1gSPIyf8JOiJ6PZaKKI5KoZw8jzZkD5bRAZy9Eo6EYQvNuBCeJ8LprLR6XfmDoV4I-aCi-el3KK84KnUozRBs" />
+                        <div class="absolute inset-0 bg-primary/10"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Pillar 2: Personal Excellence -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-7">
+                    <div class="relative rounded-2xl overflow-hidden aspect-[16/10] bg-surface-container">
+                        <img alt="Personal Brand"
+                            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                            data-alt="dramatic low angle shot of a professional in a bespoke black suit standing against a monolithic concrete wall architectural background"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdcSg7-qcbbHJJukudlrrL-wPyX9WnspQRiZL_PGqtEc9DKKKdLHczlCjOOQLM5W9s5KWwEpdwIsww-0pF-cgGiUw96I_9JrULvHsqEZETXqHYjdqPjgPSG_uj9HY0Fm1ST00fKDgIQB9roZ3_FGeY840rrYduUkT__ubD11AFsCYIOSYrLmeR2lYmFtTLNThnCbSie84Ae9sBlxwRfYNlqiH8h3aqlcvLAyF5kx7MZf14dZBv1n2L6uTj2GGs5mrqY14iipcsu_wI" />
+                        <div class="absolute inset-0 bg-primary/10"></div>
+                    </div>
+                </div>
+                <div class="md:col-span-5">
+                    <div class="inline-flex items-center gap-2 mb-6 text-secondary font-bold">
+                        <span class="material-symbols-outlined" data-icon="person_celebrate">person_celebrate</span>
+                        <span class="uppercase tracking-widest text-xs">Pillar 02</span>
+                    </div>
+                    <h2 class="text-4xl font-black font-headline text-primary mb-6">Personal Excellence</h2>
+                    <p class="text-on-surface-variant mb-10 leading-relaxed">Elevating individual influence and
+                        systematic self-management for leaders.</p>
+                    <div class="grid grid-cols-1 gap-4">
+                        <!-- Bento Card A -->
+                        <div
+                            class="bg-surface-container-lowest p-8 rounded-xl border-l-2 border-secondary-container shadow-sm hover:bg-surface-container-low transition-all">
+                            <div class="mb-4 text-secondary-container">
+                                <span class="material-symbols-outlined text-4xl"
+                                    data-icon="settings_account_box">settings_account_box</span>
+                            </div>
+                            <h3 class="font-bold text-xl text-primary mb-2">Self Setup</h3>
+                            <p class="text-on-surface-variant text-sm">Engineered routines and systems for peak
+                                cognitive performance.</p>
+                        </div>
+                        <!-- Row -->
+                        <div class="grid grid-cols-2 gap-4">
+                            <div
+                                class="bg-surface-container-lowest p-6 rounded-xl border-l-2 border-secondary-container shadow-sm hover:bg-surface-container-low transition-all">
+                                <h3 class="font-bold text-lg text-primary mb-1">Personal Branding</h3>
+                                <p class="text-xs text-on-surface-variant">Visual identity for the high-net-worth
+                                    individual.</p>
+                            </div>
+                            <div
+                                class="bg-surface-container-lowest p-6 rounded-xl border-l-2 border-secondary-container shadow-sm hover:bg-surface-container-low transition-all">
+                                <h3 class="font-bold text-lg text-primary mb-1">Showing Up</h3>
+                                <p class="text-xs text-on-surface-variant">Presence, communication, and executive
+                                    charisma.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Pillar 3: Digital Systems -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-5 order-2 md:order-1">
+                    <div class="inline-flex items-center gap-2 mb-6 text-secondary font-bold">
+                        <span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+                        <span class="uppercase tracking-widest text-xs">Pillar 03</span>
+                    </div>
+                    <h2 class="text-4xl font-black font-headline text-primary mb-6">Digital Systems</h2>
+                    <p class="text-on-surface-variant mb-10 leading-relaxed">High-performance digital products designed
+                        for conversion and uncompromising aesthetics.</p>
+                    <div class="bg-primary text-white p-8 rounded-2xl relative overflow-hidden group">
+                        <div class="relative z-10">
+                            <h3 class="text-2xl font-bold font-headline mb-4 text-secondary-container">Website Design
+                                &amp; Development</h3>
+                            <p class="text-surface-variant mb-6 text-sm">We don't just build websites; we engineer
+                                digital headquarters that represent your brand's authority with pixel-perfect precision.
+                            </p>
+                            <ul class="space-y-3 mb-8">
+                                <li class="flex items-center gap-3 text-sm">
+                                    <span class="material-symbols-outlined text-secondary-container"
+                                        data-icon="check_circle">check_circle</span>
+                                    Custom Architecture &amp; UX
+                                </li>
+                                <li class="flex items-center gap-3 text-sm">
+                                    <span class="material-symbols-outlined text-secondary-container"
+                                        data-icon="check_circle">check_circle</span>
+                                    High-Performance React/Tailwind
+                                </li>
+                                <li class="flex items-center gap-3 text-sm">
+                                    <span class="material-symbols-outlined text-secondary-container"
+                                        data-icon="check_circle">check_circle</span>
+                                    SEO &amp; Conversion Optimization
+                                </li>
+                            </ul>
+                            <button
+                                class="bg-white text-primary font-bold px-8 py-3 rounded-xl hover:bg-secondary-container transition-colors">Launch
+                                Project</button>
+                        </div>
+                        <!-- Decorative Abstract Background -->
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-secondary-container/10 blur-3xl -mr-20 -mt-20">
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-span-7 order-1 md:order-2">
+                    <div class="relative rounded-2xl overflow-hidden aspect-[16/10] bg-surface-container">
+                        <img alt="Digital Development"
+                            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                            data-alt="extreme close up of high-end mechanical keyboard and sleek monitor with code lines reflected in a dark premium workspace"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSW0CIXMd7Nf4VSdfBZBmgmp2T5BqxjPLoFD65y3RU4de3Dy2aGSYoakwLwzafrnPhkvZ2NP6wrVxiJIRgbILuDiQ-4w_85LS-bzFwjxpN8onEAsAOsuC8XuS6zhLsRosYd9OIrtt6s5j7m4nQ-SVMgG24hqrsy1sSFoSsvtDB7aGi4VmI9ex-hLQmKfIXI7nLymp3_azAavKz4y_m5dUQjqjsUDRe0IffmVhRAeXjpO9hzZwlbp8uDpOzm2rqg3lSF1QQ4NpyYv2W" />
+                        <div class="absolute inset-0 bg-primary/10"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Final CTA -->
+        <section class="max-w-7xl mx-auto px-8 mt-48">
+            <div class="bg-surface-container-low rounded-3xl p-16 text-center">
+                <h2 class="text-5xl font-black font-headline text-primary mb-6">Ready for Structural Authority?</h2>
+                <p class="text-xl text-on-surface-variant max-w-2xl mx-auto mb-12">Stop managing chaos. Start leading
+                    with clarity through our engineered solutions.</p>
+                <div class="flex flex-col md:flex-row justify-center gap-4">
+                    <button
+                        class="signature-cta text-on-secondary-fixed px-12 py-5 rounded-xl font-bold text-lg hover:shadow-2xl transition-all hover:-translate-y-1">
+                        Book Your Strategy Session
+                    </button>
+                    <button
+                        class="bg-primary-container text-surface px-12 py-5 rounded-xl font-bold text-lg hover:bg-primary transition-all">
+                        View Detailed Portfolio
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-primary dark:bg-black w-full py-16 px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto">
+            <div class="space-y-6">
+                <div class="text-xl font-bold text-white uppercase tracking-tighter">ORGTING</div>
+                <p class="font-inter text-body-md text-surface-variant">Elite engineering for modern businesses and
+                    individuals. From chaos to clarity.</p>
+            </div>
+            <div class="space-y-4">
+                <h4 class="text-white font-bold uppercase tracking-widest text-xs">Explore</h4>
+                <ul class="space-y-2">
+                    <li><a class="text-gray-400 hover:text-white hover:translate-x-1 duration-200 block transition-all"
+                            href="#">Services</a></li>
+                    <li><a class="text-gray-400 hover:text-white hover:translate-x-1 duration-200 block transition-all"
+                            href="#">Case Studies</a></li>
+                    <li><a class="text-gray-400 hover:text-white hover:translate-x-1 duration-200 block transition-all"
+                            href="#">Resources</a></li>
+                </ul>
+            </div>
+            <div class="space-y-4">
+                <h4 class="text-white font-bold uppercase tracking-widest text-xs">Connect</h4>
+                <ul class="space-y-2">
+                    <li><a class="text-gray-400 hover:text-white hover:translate-x-1 duration-200 block transition-all"
+                            href="#">Contact</a></li>
+                    <li><a class="text-gray-400 hover:text-white hover:translate-x-1 duration-200 block transition-all"
+                            href="#">Newsletter</a></li>
+                    <li><a class="text-gray-400 hover:text-white hover:translate-x-1 duration-200 block transition-all"
+                            href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+            <div class="space-y-4">
+                <h4 class="text-white font-bold uppercase tracking-widest text-xs">Legal</h4>
+                <ul class="space-y-2">
+                    <li><a class="text-gray-400 hover:text-white hover:translate-x-1 duration-200 block transition-all"
+                            href="#">Privacy Policy</a></li>
+                    <li><a class="text-gray-400 hover:text-white hover:translate-x-1 duration-200 block transition-all"
+                            href="#">Terms of Service</a></li>
+                </ul>
+                <div class="pt-8 text-surface-variant font-inter text-body-md">
+                    © 2024 ORGTING. Chaos to Clarity.
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

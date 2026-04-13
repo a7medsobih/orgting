@@ -1,0 +1,3467 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORGTING — Organization Worth Promoting</title>
+    <meta name="description"
+        content="ORGTING specializes in integrated operational excellence and marketing solutions. From chaos to clarity — Egypt to the world.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@300;400;500;700&family=Montserrat:wght@300;400;600;700;900&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --dark: #232323;
+            --gold: #ffc000;
+            --gold-light: #ffd54f;
+            --white: #ffffff;
+            --gray-light: #f5f5f3;
+            --gray-mid: #e8e8e4;
+            --gray-text: #888;
+            --transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--white);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        body.rtl {
+            font-family: 'Tajawal', sans-serif;
+            direction: rtl;
+        }
+
+        /* ─── TYPOGRAPHY ─── */
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .rtl h1,
+        .rtl h2,
+        .rtl h3,
+        .rtl h4 {
+            font-family: 'Cairo', sans-serif;
+            letter-spacing: 0;
+        }
+
+        .rtl p,
+        .rtl span,
+        .rtl li,
+        .rtl a {
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        .rtl .nav-logo-text,
+        .rtl .nav-links a {
+            font-family: 'Cairo', sans-serif;
+        }
+
+        /* ─── NAVBAR ─── */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 20px 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background var(--transition), box-shadow var(--transition);
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+            padding: 14px 60px;
+        }
+
+        .navbar.dark-bg {
+            background: transparent;
+        }
+
+        .navbar.dark-bg .nav-links a {
+            color: var(--white);
+        }
+
+        .navbar.dark-bg .lang-btn {
+            color: var(--white);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .navbar.dark-bg.scrolled .nav-links a {
+            color: var(--dark);
+        }
+
+        .navbar.dark-bg.scrolled .lang-btn {
+            color: var(--dark);
+            border-color: rgba(35, 35, 35, 0.3);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .nav-logo-icon {
+            width: 38px;
+            height: 38px;
+            border: 2.5px solid var(--dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-logo-icon::before {
+            content: '';
+            position: absolute;
+            width: 55%;
+            height: 3px;
+            background: var(--gold);
+            top: 42%;
+            left: 20%;
+            box-shadow: 0 5px 0 var(--gold), 0 10px 0 rgba(255, 192, 0, 0.5);
+            transform: translateY(-50%);
+        }
+
+        .nav-logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 20px;
+            color: var(--dark);
+            letter-spacing: 0.02em;
+        }
+
+        .nav-logo-text span {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--dark);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            transition: color 0.2s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            right: 100%;
+            height: 2px;
+            background: var(--gold);
+            transition: right 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-links a:hover::after {
+            right: 0;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .lang-btn {
+            background: none;
+            border: 1.5px solid rgba(35, 35, 35, 0.3);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--dark);
+            transition: all 0.2s;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .lang-btn:hover {
+            background: var(--gold);
+            border-color: var(--gold);
+            color: var(--dark);
+        }
+
+        .nav-cta {
+            background: var(--gold);
+            color: var(--dark);
+            padding: 10px 22px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.2s;
+            letter-spacing: 0.01em;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(255, 192, 0, 0.4);
+        }
+
+        /* ─── PAGES ─── */
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* ─── HOME HERO ─── */
+        .hero {
+            min-height: 100vh;
+            background: var(--dark);
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-bg-anim {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .hero-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.12;
+            animation: orbFloat 8s ease-in-out infinite;
+        }
+
+        .hero-orb-1 {
+            width: 600px;
+            height: 600px;
+            background: var(--gold);
+            top: -100px;
+            right: -100px;
+            animation-delay: 0s;
+        }
+
+        .hero-orb-2 {
+            width: 400px;
+            height: 400px;
+            background: #fff;
+            bottom: -50px;
+            left: 10%;
+            animation-delay: -3s;
+            opacity: 0.05;
+        }
+
+        .hero-orb-3 {
+            width: 300px;
+            height: 300px;
+            background: var(--gold);
+            top: 50%;
+            left: 40%;
+            animation-delay: -5s;
+            opacity: 0.08;
+        }
+
+        @keyframes orbFloat {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            33% {
+                transform: translate(30px, -40px) scale(1.05);
+            }
+
+            66% {
+                transform: translate(-20px, 30px) scale(0.95);
+            }
+        }
+
+        /* Grid lines */
+        .hero-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255, 192, 0, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 192, 0, 0.04) 1px, transparent 1px);
+            background-size: 80px 80px;
+            animation: gridShift 20s linear infinite;
+        }
+
+        @keyframes gridShift {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(80px);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 160px 60px 80px;
+            max-width: 900px;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 192, 0, 0.12);
+            border: 1px solid rgba(255, 192, 0, 0.3);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--gold);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 32px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards 0.3s;
+        }
+
+        .hero-tag-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.3;
+            }
+        }
+
+        .hero-title {
+            font-size: clamp(48px, 7vw, 88px);
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.0;
+            margin-bottom: 28px;
+            opacity: 0;
+            animation: fadeUp 0.9s ease forwards 0.5s;
+        }
+
+        .hero-title .gold {
+            color: var(--gold);
+        }
+
+        .hero-title .outline {
+            -webkit-text-stroke: 2px rgba(255, 255, 255, 0.4);
+            color: transparent;
+        }
+
+        .hero-sub {
+            font-size: 18px;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 560px;
+            line-height: 1.7;
+            margin-bottom: 48px;
+            opacity: 0;
+            animation: fadeUp 0.9s ease forwards 0.7s;
+        }
+
+        .rtl .hero-sub {
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeUp 0.9s ease forwards 0.9s;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--dark);
+            padding: 16px 32px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.25s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(255, 192, 0, 0.45);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 16px 32px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1.5px solid rgba(255, 255, 255, 0.25);
+            transition: all 0.25s;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        .hero-stats {
+            position: absolute;
+            bottom: 60px;
+            right: 60px;
+            display: flex;
+            gap: 48px;
+            opacity: 0;
+            animation: fadeUp 0.9s ease forwards 1.1s;
+        }
+
+        .rtl .hero-stats {
+            right: auto;
+            left: 60px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-num {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            font-weight: 900;
+            color: var(--gold);
+            display: block;
+        }
+
+        .rtl .stat-num {
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ─── CHAOS SECTION ─── */
+        .chaos-section {
+            padding: 120px 60px;
+            background: var(--white);
+            overflow: hidden;
+        }
+
+        .section-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: clamp(32px, 4vw, 52px);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .section-sub {
+            font-size: 17px;
+            color: var(--gray-text);
+            line-height: 1.7;
+            max-width: 580px;
+            margin-bottom: 60px;
+        }
+
+        .chaos-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+            border: 2px solid var(--dark);
+            border-radius: 16px;
+            overflow: hidden;
+            max-width: 900px;
+        }
+
+        .chaos-card {
+            padding: 40px;
+            background: var(--white);
+            transition: background var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chaos-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .chaos-card:hover {
+            background: var(--gray-light);
+        }
+
+        .chaos-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .chaos-num {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 64px;
+            font-weight: 900;
+            color: rgba(35, 35, 35, 0.06);
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+
+        .chaos-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .chaos-desc {
+            font-size: 14px;
+            color: var(--gray-text);
+            line-height: 1.7;
+        }
+
+        /* ─── SOLUTION STRIP ─── */
+        .solution-strip {
+            background: var(--dark);
+            padding: 80px 60px;
+            display: flex;
+            align-items: center;
+            gap: 80px;
+            overflow: hidden;
+        }
+
+        .solution-strip-text {
+            flex: 1;
+        }
+
+        .solution-strip h2 {
+            font-size: 40px;
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .solution-strip p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .solution-strip-arrow {
+            width: 80px;
+            height: 80px;
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            animation: rotateArrow 4s linear infinite;
+        }
+
+        @keyframes rotateArrow {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .solution-strip-arrow svg {
+            animation: rotateArrow 4s linear infinite reverse;
+        }
+
+        /* ─── SERVICES SECTION ─── */
+        .services-section {
+            padding: 120px 60px;
+            background: var(--gray-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 60px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 48px;
+            border: 1px solid var(--gray-mid);
+            cursor: pointer;
+            transition: all var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            border-color: transparent;
+        }
+
+        .service-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(255, 192, 0, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            font-size: 24px;
+        }
+
+        .service-card h3 {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            font-size: 15px;
+            color: var(--gray-text);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--dark);
+            text-decoration: none;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 2px;
+            transition: gap 0.2s;
+        }
+
+        .service-link:hover {
+            gap: 12px;
+        }
+
+        /* ─── PROCESS SECTION ─── */
+        .process-section {
+            padding: 120px 60px;
+            background: var(--white);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            margin-top: 60px;
+            position: relative;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 32px;
+            left: 15%;
+            right: 15%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), var(--dark));
+            z-index: 0;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            padding: 0 16px;
+        }
+
+        .step-circle {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: var(--dark);
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 900;
+            margin: 0 auto 24px;
+            border: 4px solid var(--white);
+            box-shadow: 0 0 0 2px var(--dark);
+            transition: background var(--transition);
+        }
+
+        .process-step:hover .step-circle {
+            background: var(--gold);
+            color: var(--dark);
+        }
+
+        .step-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .step-desc {
+            font-size: 13px;
+            color: var(--gray-text);
+            line-height: 1.6;
+        }
+
+        /* ─── BRANDS ─── */
+        .brands-section {
+            padding: 80px 60px;
+            background: var(--dark);
+            overflow: hidden;
+        }
+
+        .brands-scroll-track {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+            animation: scrollBrands 25s linear infinite;
+            width: max-content;
+        }
+
+        @keyframes scrollBrands {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .brand-pill {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 12px 28px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.7);
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+
+        .brand-pill:hover {
+            background: rgba(255, 192, 0, 0.15);
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        /* ─── WHY SECTION ─── */
+        .why-section {
+            padding: 120px 60px;
+            background: var(--gray-light);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 60px;
+        }
+
+        .why-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 36px 28px;
+            border: 1px solid var(--gray-mid);
+            transition: all var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-card::before {
+            content: attr(data-num);
+            position: absolute;
+            top: 16px;
+            right: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 72px;
+            font-weight: 900;
+            color: rgba(255, 192, 0, 0.08);
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .rtl .why-card::before {
+            right: auto;
+            left: 20px;
+        }
+
+        .why-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+        }
+
+        .why-icon {
+            font-size: 28px;
+            margin-bottom: 16px;
+        }
+
+        .why-card h3 {
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .why-card p {
+            font-size: 14px;
+            color: var(--gray-text);
+            line-height: 1.7;
+        }
+
+        /* ─── CTA SECTION ─── */
+        .cta-section {
+            padding: 120px 60px;
+            background: var(--dark);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .cta-bg {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(255, 192, 0, 0.08), transparent);
+            pointer-events: none;
+        }
+
+        .cta-section h2 {
+            font-size: clamp(36px, 5vw, 64px);
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 18px;
+            margin-bottom: 48px;
+            position: relative;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        /* ─── ABOUT PAGE ─── */
+        .about-hero {
+            padding: 180px 60px 100px;
+            background: var(--dark);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-hero h1 {
+            font-size: clamp(48px, 6vw, 80px);
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 24px;
+        }
+
+        .about-hero p {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 600px;
+            line-height: 1.7;
+        }
+
+        .about-vm {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+            background: var(--dark);
+            margin: 0;
+        }
+
+        .vm-card {
+            background: var(--white);
+            padding: 64px;
+        }
+
+        .vm-card:last-child {
+            background: var(--gray-light);
+        }
+
+        .vm-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+
+        .vm-card h2 {
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+
+        .vm-card p {
+            font-size: 16px;
+            color: var(--gray-text);
+            line-height: 1.8;
+        }
+
+        .values-section {
+            padding: 100px 60px;
+            background: var(--white);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: var(--dark);
+            border: 1px solid var(--dark);
+            margin-top: 60px;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .value-item {
+            background: var(--white);
+            padding: 40px 32px;
+            transition: background 0.3s;
+        }
+
+        .value-item:hover {
+            background: var(--gold);
+        }
+
+        .value-item:hover .value-title {
+            color: var(--dark);
+        }
+
+        .value-item:hover .value-desc {
+            color: rgba(35, 35, 35, 0.7);
+        }
+
+        .value-num {
+            font-size: 48px;
+            font-weight: 900;
+            color: rgba(35, 35, 35, 0.07);
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 8px;
+        }
+
+        .value-title {
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            transition: color 0.3s;
+        }
+
+        .value-desc {
+            font-size: 13px;
+            color: var(--gray-text);
+            line-height: 1.6;
+            transition: color 0.3s;
+        }
+
+        .team-section {
+            padding: 100px 60px;
+            background: var(--gray-light);
+        }
+
+        .team-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 40px;
+        }
+
+        .team-tag {
+            background: var(--dark);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .team-tag:hover {
+            background: var(--gold);
+            color: var(--dark);
+        }
+
+        /* ─── SERVICES PAGE ─── */
+        .services-hero {
+            padding: 180px 60px 100px;
+            background: var(--dark);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-hero h1 {
+            font-size: clamp(40px, 5vw, 72px);
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 24px;
+        }
+
+        .services-hero p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 560px;
+            line-height: 1.7;
+        }
+
+        .service-detail-grid {
+            padding: 80px 60px;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .service-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border-bottom: 1px solid var(--gray-mid);
+        }
+
+        .service-detail:nth-child(even) .sd-visual {
+            order: -1;
+        }
+
+        .rtl .service-detail:nth-child(even) .sd-visual {
+            order: 1;
+        }
+
+        .sd-content {
+            padding: 80px;
+            background: var(--white);
+        }
+
+        .sd-visual {
+            padding: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sd-visual.dark-bg-v {
+            background: var(--dark);
+        }
+
+        .sd-visual.gold-bg-v {
+            background: var(--gold);
+        }
+
+        .sd-visual.gray-bg-v {
+            background: var(--gray-light);
+        }
+
+        .sd-num {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 80px;
+            font-weight: 900;
+            color: rgba(35, 35, 35, 0.06);
+            line-height: 1;
+            margin-bottom: -16px;
+        }
+
+        .sd-content h2 {
+            font-size: 36px;
+            font-weight: 900;
+            margin-bottom: 16px;
+        }
+
+        .sd-content p {
+            font-size: 15px;
+            color: var(--gray-text);
+            line-height: 1.8;
+            margin-bottom: 32px;
+        }
+
+        .steps-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--gray-mid);
+            transition: all 0.2s;
+        }
+
+        .step-item:hover {
+            border-color: var(--gold);
+            background: rgba(255, 192, 0, 0.04);
+        }
+
+        .step-badge {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: var(--dark);
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 800;
+            flex-shrink: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .step-content h4 {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .step-content p {
+            font-size: 13px;
+            color: var(--gray-text);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Visual elements */
+        .visual-diagram {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .vd-row {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .vd-box {
+            padding: 14px 20px;
+            border-radius: 10px;
+            font-size: 12px;
+            font-weight: 700;
+            text-align: center;
+            flex: 1;
+        }
+
+        .vd-box.dark {
+            background: var(--dark);
+            color: var(--gold);
+        }
+
+        .vd-box.gold {
+            background: var(--gold);
+            color: var(--dark);
+        }
+
+        .vd-box.outline {
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: var(--white);
+        }
+
+        .vd-arrow {
+            text-align: center;
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* ─── CASE STUDIES PAGE ─── */
+        .cases-hero {
+            padding: 180px 60px 100px;
+            background: var(--dark);
+        }
+
+        .cases-hero h1 {
+            font-size: clamp(40px, 5vw, 72px);
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 24px;
+        }
+
+        .cases-hero p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 560px;
+            line-height: 1.7;
+        }
+
+        .cases-grid {
+            padding: 80px 60px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2px;
+            background: var(--dark);
+        }
+
+        .case-card {
+            background: var(--white);
+            padding: 56px;
+            transition: all var(--transition);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .case-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .case-card:hover {
+            background: var(--gray-light);
+        }
+
+        .case-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .case-industry {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+
+        .case-card h3 {
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+
+        .case-meta {
+            display: flex;
+            gap: 32px;
+            margin-bottom: 28px;
+        }
+
+        .case-meta-item {}
+
+        .case-meta-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--gray-text);
+            margin-bottom: 4px;
+        }
+
+        .case-meta-val {
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .case-outcome {
+            background: var(--dark);
+            padding: 20px 24px;
+            border-radius: 10px;
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .outcome-stat {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--gold);
+        }
+
+        .rtl .outcome-stat {
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .outcome-desc {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.5;
+        }
+
+        .before-after {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .ba-card {
+            padding: 16px;
+            border-radius: 10px;
+        }
+
+        .ba-card.before {
+            background: rgba(226, 75, 74, 0.08);
+            border: 1px solid rgba(226, 75, 74, 0.2);
+        }
+
+        .ba-card.after {
+            background: rgba(99, 153, 34, 0.08);
+            border: 1px solid rgba(99, 153, 34, 0.2);
+        }
+
+        .ba-label {
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .ba-card.before .ba-label {
+            color: #E24B4A;
+        }
+
+        .ba-card.after .ba-label {
+            color: #639922;
+        }
+
+        .ba-text {
+            font-size: 13px;
+            line-height: 1.6;
+            color: var(--dark);
+        }
+
+        /* ─── CONTACT PAGE ─── */
+        .contact-page {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 100vh;
+        }
+
+        .contact-left {
+            background: var(--dark);
+            padding: 180px 64px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-left-bg {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 70% 60% at 20% 80%, rgba(255, 192, 0, 0.06), transparent);
+            pointer-events: none;
+        }
+
+        .contact-left h1 {
+            font-size: 56px;
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 24px;
+            line-height: 1.1;
+            position: relative;
+        }
+
+        .contact-left p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 17px;
+            line-height: 1.7;
+            margin-bottom: 48px;
+            position: relative;
+            max-width: 420px;
+        }
+
+        .contact-info {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .contact-info-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: rgba(255, 192, 0, 0.12);
+            border: 1px solid rgba(255, 192, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .contact-info-text p {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 2px;
+        }
+
+        .contact-info-text a,
+        .contact-info-text span {
+            color: var(--white);
+            font-size: 15px;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .contact-info-text a:hover {
+            color: var(--gold);
+        }
+
+        .contact-right {
+            background: var(--white);
+            padding: 180px 64px 80px;
+        }
+
+        .contact-right h2 {
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 8px;
+        }
+
+        .contact-right .sub {
+            color: var(--gray-text);
+            font-size: 15px;
+            margin-bottom: 40px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 14px 16px;
+            border-radius: 10px;
+            border: 1.5px solid var(--gray-mid);
+            font-size: 15px;
+            font-family: inherit;
+            transition: border-color 0.2s;
+            outline: none;
+            background: var(--white);
+            color: var(--dark);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--gold);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: var(--dark);
+            color: var(--white);
+            padding: 18px 36px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.25s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            align-self: flex-start;
+        }
+
+        .submit-btn:hover {
+            background: var(--gold);
+            color: var(--dark);
+            transform: translateY(-2px);
+        }
+
+        .whatsapp-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #25D366;
+            color: white;
+            padding: 16px 28px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.25s;
+            margin-top: 16px;
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+        }
+
+        /* ─── FOOTER ─── */
+        .footer {
+            background: var(--dark);
+            padding: 60px;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 48px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.4);
+            line-height: 1.7;
+            margin-top: 16px;
+            max-width: 260px;
+        }
+
+        .footer-col h4 {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-col ul li a {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.4);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            background: var(--dark);
+            padding: 24px 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer-bottom p {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .footer-bottom .gold-text {
+            color: var(--gold);
+        }
+
+        /* ─── SCROLL ANIMATIONS ─── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .stagger .reveal:nth-child(1) {
+            transition-delay: 0s;
+        }
+
+        .stagger .reveal:nth-child(2) {
+            transition-delay: 0.1s;
+        }
+
+        .stagger .reveal:nth-child(3) {
+            transition-delay: 0.2s;
+        }
+
+        .stagger .reveal:nth-child(4) {
+            transition-delay: 0.3s;
+        }
+
+        .stagger .reveal:nth-child(5) {
+            transition-delay: 0.4s;
+        }
+
+        .stagger .reveal:nth-child(6) {
+            transition-delay: 0.5s;
+        }
+
+        /* ─── PORTFOLIO PAGE (Website Design) ─── */
+        .portfolio-hero {
+            padding: 180px 60px 100px;
+            background: var(--dark);
+        }
+
+        .portfolio-hero h1 {
+            font-size: clamp(40px, 5vw, 72px);
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 24px;
+        }
+
+        .portfolio-hero p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 560px;
+            line-height: 1.7;
+        }
+
+        .portfolio-grid {
+            padding: 80px 60px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            background: var(--gray-light);
+        }
+
+        .portfolio-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--gray-mid);
+            transition: all var(--transition);
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.12);
+        }
+
+        .portfolio-thumb {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-thumb::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: inherit;
+            opacity: 0.6;
+        }
+
+        .portfolio-thumb-inner {
+            position: relative;
+            z-index: 1;
+        }
+
+        .portfolio-body {
+            padding: 28px;
+        }
+
+        .portfolio-tag {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .portfolio-body h3 {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-body p {
+            font-size: 14px;
+            color: var(--gray-text);
+            line-height: 1.6;
+        }
+
+        /* ─── REACH SECTION ─── */
+        .reach-section {
+            padding: 80px 60px;
+            background: var(--white);
+        }
+
+        .reach-countries {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 40px;
+        }
+
+        .country-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 24px;
+            border-radius: 100px;
+            border: 1.5px solid var(--gray-mid);
+            font-size: 15px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .country-badge:hover {
+            border-color: var(--gold);
+            background: rgba(255, 192, 0, 0.05);
+        }
+
+        .country-flag {
+            font-size: 22px;
+        }
+
+        /* ─── MOBILE MENU ─── */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--dark);
+            transition: all 0.3s;
+            border-radius: 2px;
+        }
+
+        @media (max-width: 900px) {
+            .navbar {
+                padding: 16px 24px;
+            }
+
+            .navbar.scrolled {
+                padding: 12px 24px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero-content {
+                padding: 140px 24px 60px;
+            }
+
+            .hero-stats {
+                bottom: 24px;
+                right: 24px;
+                gap: 24px;
+            }
+
+            .chaos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                padding: 0;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .process-steps::before {
+                display: none;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .contact-page {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-left {
+                padding: 140px 32px 60px;
+            }
+
+            .contact-right {
+                padding: 60px 32px 60px;
+            }
+
+            .cases-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-vm {
+                grid-template-columns: 1fr;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .service-detail {
+                grid-template-columns: 1fr;
+            }
+
+            .service-detail:nth-child(even) .sd-visual {
+                order: 0;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .chaos-section,
+            .services-section,
+            .process-section,
+            .why-section,
+            .cta-section,
+            .brands-section,
+            .about-hero,
+            .services-hero,
+            .cases-hero,
+            .portfolio-hero,
+            .values-section,
+            .team-section,
+            .reach-section,
+            .service-detail-grid {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+
+            .solution-strip {
+                flex-direction: column;
+                gap: 32px;
+                padding: 60px 24px;
+            }
+
+            .sd-content,
+            .sd-visual {
+                padding: 40px 24px;
+            }
+
+            .vm-card {
+                padding: 40px 24px;
+            }
+
+            .footer {
+                padding: 48px 24px;
+            }
+
+            .footer-bottom {
+                padding: 20px 24px;
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            h1.hero-title {
+                font-size: clamp(36px, 10vw, 64px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar dark-bg" id="navbar">
+        <a href="#" class="nav-logo" onclick="showPage('home')">
+            <div class="nav-logo-icon"></div>
+            <span class="nav-logo-text">ORGTI<span>N</span>G</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#" onclick="showPage('home')" data-en="Home" data-ar="الرئيسية">Home</a></li>
+            <li><a href="#" onclick="showPage('about')" data-en="About" data-ar="من نحن">About</a></li>
+            <li><a href="#" onclick="showPage('services')" data-en="Services" data-ar="خدماتنا">Services</a></li>
+            <li><a href="#" onclick="showPage('cases')" data-en="Case Studies" data-ar="أعمالنا">Case Studies</a></li>
+            <li><a href="#" onclick="showPage('contact')" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+        </ul>
+        <div class="nav-right">
+            <button class="lang-btn" id="langBtn" onclick="toggleLang()">عربي</button>
+            <a href="#" class="nav-cta" onclick="showPage('contact')" data-en="Book a Call" data-ar="احجز استشارة">Book
+                a Call</a>
+        </div>
+    </nav>
+
+    <!-- ════════════════════════════════════════════════ HOME PAGE -->
+    <div class="page active" id="page-home">
+
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-bg-anim">
+                <div class="hero-orb hero-orb-1"></div>
+                <div class="hero-orb hero-orb-2"></div>
+                <div class="hero-orb hero-orb-3"></div>
+                <div class="hero-grid"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-tag">
+                    <div class="hero-tag-dot"></div>
+                    <span data-en="Organization Worth Promoting" data-ar="منظمة تستحق الترقية">Organization Worth
+                        Promoting</span>
+                </div>
+                <h1 class="hero-title">
+                    <span data-en="From" data-ar="من">From</span> <span class="outline" data-en="Chaos"
+                        data-ar="الفوضى">Chaos</span><br>
+                    <span data-en="To" data-ar="إلى">To</span> <span class="gold" data-en="Clarity."
+                        data-ar="الوضوح.">Clarity.</span>
+                </h1>
+                <p class="hero-sub"
+                    data-en="We don't just execute projects. We build scalable systems and sustainable brands — fixing the structural disconnection that keeps businesses from growing."
+                    data-ar="نحن لا ننفذ مشاريع فحسب. نبني أنظمة قابلة للتطوير وعلامات تجارية مستدامة — نعالج الانفصال الهيكلي الذي يعيق نمو الشركات.">
+                    We don't just execute projects. We build scalable systems and sustainable brands — fixing the
+                    structural disconnection that keeps businesses from growing.</p>
+                <div class="hero-actions">
+                    <a href="#" class="btn-primary" onclick="showPage('contact')">
+                        <span data-en="Book a Strategy Call" data-ar="احجز استشارة استراتيجية">Book a Strategy
+                            Call</span>
+                        <span>→</span>
+                    </a>
+                    <a href="#" class="btn-secondary" onclick="showPage('services')">
+                        <span data-en="Explore Services" data-ar="استكشف الخدمات">Explore Services</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-num">50+</span>
+                    <span class="stat-label" data-en="Campaigns" data-ar="حملة">Campaigns</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">98%</span>
+                    <span class="stat-label" data-en="On-Time Delivery" data-ar="تسليم في الوقت">On-Time Delivery</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">8+</span>
+                    <span class="stat-label" data-en="Years Active" data-ar="سنوات خبرة">Years Active</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHAOS SECTION -->
+        <section class="chaos-section">
+            <div class="reveal">
+                <div class="section-label" data-en="The Problem" data-ar="المشكلة">The Problem</div>
+                <h2 class="section-title">
+                    <span data-en="Businesses fail because of" data-ar="الشركات تفشل بسبب">Businesses fail because
+                        of</span><br>
+                    <span data-en="structural disconnection" data-ar="الانفصال الهيكلي">structural disconnection</span>
+                </h2>
+                <p class="section-sub"
+                    data-en="They're successful enough to grow, but too disorganized to scale. ORGTING solves the growth paradox."
+                    data-ar="هي ناجحة بما يكفي للنمو، لكنها غير منظمة بما يكفي للتوسع. ORGTING تحل معضلة النمو.">They're
+                    successful enough to grow, but too disorganized to scale. ORGTING solves the growth paradox.</p>
+            </div>
+            <div class="chaos-grid stagger">
+                <div class="chaos-card reveal">
+                    <div class="chaos-num">01</div>
+                    <div class="chaos-title" data-en="Operational Fragility" data-ar="هشاشة التشغيل">Operational
+                        Fragility</div>
+                    <div class="chaos-desc"
+                        data-en="Workflow chaos that drains energy, delays decisions, and creates bottlenecks at every level of the organization."
+                        data-ar="فوضى في سير العمل تستنزف الطاقة وتؤخر القرارات وتخلق عوائق في كل مستوى.">Workflow chaos
+                        that drains energy, delays decisions, and creates bottlenecks at every level of the
+                        organization.</div>
+                </div>
+                <div class="chaos-card reveal">
+                    <div class="chaos-num">02</div>
+                    <div class="chaos-title" data-en="Financial Leakage" data-ar="التسرب المالي">Financial Leakage</div>
+                    <div class="chaos-desc"
+                        data-en="Without proper ERP systems, money disappears into invisible cracks — untracked costs, inefficiencies, and missed revenue opportunities."
+                        data-ar="بدون أنظمة ERP مناسبة، تختفي الأموال في ثغرات غير مرئية وفرص ضائعة.">Without proper ERP
+                        systems, money disappears into invisible cracks — untracked costs, inefficiencies, and missed
+                        revenue opportunities.</div>
+                </div>
+                <div class="chaos-card reveal">
+                    <div class="chaos-num">03</div>
+                    <div class="chaos-title" data-en="Broken Brand-Ops Alignment" data-ar="انفصال التسويق عن التشغيل">
+                        Broken Brand-Ops Alignment</div>
+                    <div class="chaos-desc"
+                        data-en="Marketing promises what operations cannot deliver — destroying trust, burning budgets, and damaging reputation."
+                        data-ar="التسويق يعد بما لا يستطيع التشغيل تقديمه، مما يدمر الثقة ويحرق الميزانيات.">Marketing
+                        promises what operations cannot deliver — destroying trust, burning budgets, and damaging
+                        reputation.</div>
+                </div>
+                <div class="chaos-card reveal">
+                    <div class="chaos-num">04</div>
+                    <div class="chaos-title" data-en="Unscalable Success" data-ar="نجاح غير قابل للتوسع">Unscalable
+                        Success</div>
+                    <div class="chaos-desc"
+                        data-en="Growth without structure creates chaos faster than it creates value. Systems must precede scale — or scale destroys."
+                        data-ar="النمو بدون هيكل يخلق فوضى أسرع مما يخلق قيمة. الأنظمة يجب أن تسبق التوسع.">Growth
+                        without structure creates chaos faster than it creates value. Systems must precede scale — or
+                        scale destroys.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOLUTION STRIP -->
+        <div class="solution-strip">
+            <div class="solution-strip-text reveal-left">
+                <h2 data-en="Our answer: Integrated systems, not isolated services."
+                    data-ar="إجابتنا: أنظمة متكاملة، لا خدمات منفصلة.">Our answer: Integrated systems, not isolated
+                    services.</h2>
+                <p data-en="One point of accountability. Cross-functional experts. Business, Technology, and Creativity — all speaking the same language."
+                    data-ar="نقطة مساءلة واحدة. خبراء متعددو التخصصات. الأعمال والتكنولوجيا والإبداع — يتحدثون جميعاً لغة واحدة.">
+                    One point of accountability. Cross-functional experts. Business, Technology, and Creativity — all
+                    speaking the same language.</p>
+            </div>
+            <div class="solution-strip-arrow">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ffc000" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 8 16 12 12 16" />
+                    <line x1="8" y1="12" x2="16" y2="12" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- SERVICES PREVIEW -->
+        <section class="services-section">
+            <div class="reveal">
+                <div class="section-label" data-en="What We Do" data-ar="ما نقدمه">What We Do</div>
+                <h2 class="section-title" data-en="Four pillars of transformation" data-ar="أربعة محاور للتحول">Four
+                    pillars of transformation</h2>
+                <p class="section-sub"
+                    data-en="Strategy. Design. Marketing. Digital — all aligned, all integrated, all moving toward one goal: your sustainable growth."
+                    data-ar="الاستراتيجية. التصميم. التسويق. الرقمي — كل شيء متوافق ومتكامل نحو هدف واحد: نموك المستدام.">
+                    Strategy. Design. Marketing. Digital — all aligned, all integrated, all moving toward one goal: your
+                    sustainable growth.</p>
+            </div>
+            <div class="services-grid stagger">
+                <div class="service-card reveal" onclick="showPage('services')">
+                    <div class="service-icon">⚙️</div>
+                    <h3 data-en="Strategic Management" data-ar="الإدارة الاستراتيجية">Strategic Management</h3>
+                    <p data-en="Transform gut feelings into calculated legacy. Clear direction, KPI frameworks, governance models, and a roadmap that actually works."
+                        data-ar="حوّل حدسك إلى إرث محسوب. اتجاه واضح، أطر KPI، نماذج حوكمة، وخارطة طريق تعمل فعلاً.">
+                        Transform gut feelings into calculated legacy. Clear direction, KPI frameworks, governance
+                        models, and a roadmap that actually works.</p>
+                    <a href="#" class="service-link" onclick="showPage('services')"><span data-en="Learn More"
+                            data-ar="اعرف أكثر">Learn More</span> →</a>
+                </div>
+                <div class="service-card reveal" onclick="showPage('services')">
+                    <div class="service-icon">🏗️</div>
+                    <h3 data-en="Organization Design" data-ar="تصميم المنظمة">Organization Design</h3>
+                    <p data-en="Build the internal engine. Workflow restructuring, accountability systems, and leadership alignment — until the system runs itself."
+                        data-ar="ابنِ المحرك الداخلي. إعادة هيكلة سير العمل وأنظمة المساءلة ومواءمة القيادة.">Build the
+                        internal engine. Workflow restructuring, accountability systems, and leadership alignment —
+                        until the system runs itself.</p>
+                    <a href="#" class="service-link" onclick="showPage('services')"><span data-en="Learn More"
+                            data-ar="اعرف أكثر">Learn More</span> →</a>
+                </div>
+                <div class="service-card reveal" onclick="showPage('services')">
+                    <div class="service-icon">📣</div>
+                    <h3 data-en="Marketing Solutions" data-ar="حلول التسويق">Marketing Solutions</h3>
+                    <p data-en="Brand strategy, content marketing, positioning, performance — to be seen in the market and outpace competitors."
+                        data-ar="استراتيجية العلامة التجارية، تسويق المحتوى، التمركز، الأداء — لتُرى في السوق وتتخطى المنافسين.">
+                        Brand strategy, content marketing, positioning, performance — to be seen in the market and
+                        outpace competitors.</p>
+                    <a href="#" class="service-link" onclick="showPage('services')"><span data-en="Learn More"
+                            data-ar="اعرف أكثر">Learn More</span> →</a>
+                </div>
+                <div class="service-card reveal" onclick="showPage('services')">
+                    <div class="service-icon">💻</div>
+                    <h3 data-en="Website Design & Development" data-ar="تصميم وتطوير المواقع">Website Design &
+                        Development</h3>
+                    <p data-en="Scalable, UX-driven digital systems. Websites built with ORGTING thinking: structure, system, and conversion at every layer."
+                        data-ar="أنظمة رقمية قابلة للتطوير وموجهة بتجربة المستخدم. مواقع مبنية بتفكير ORGTING: هيكل ونظام وتحويل في كل طبقة.">
+                        Scalable, UX-driven digital systems. Websites built with ORGTING thinking: structure, system,
+                        and conversion at every layer.</p>
+                    <a href="#" class="service-link" onclick="showPage('services')"><span data-en="Learn More"
+                            data-ar="اعرف أكثر">Learn More</span> →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROCESS -->
+        <section class="process-section">
+            <div class="reveal" style="text-align:center; margin-bottom: 0;">
+                <div class="section-label" data-en="Our Process" data-ar="منهجيتنا">Our Process</div>
+                <h2 class="section-title" data-en="From discovery to impact" data-ar="من الاكتشاف إلى التأثير">From
+                    discovery to impact</h2>
+            </div>
+            <div class="process-steps stagger">
+                <div class="process-step reveal">
+                    <div class="step-circle">1</div>
+                    <div class="step-title" data-en="Discover" data-ar="اكتشاف">Discover</div>
+                    <div class="step-desc" data-en="Dig into brand, audience, and market insights"
+                        data-ar="التعمق في رؤى العلامة والجمهور والسوق">Dig into brand, audience, and market insights
+                    </div>
+                </div>
+                <div class="process-step reveal">
+                    <div class="step-circle">2</div>
+                    <div class="step-title" data-en="Plan" data-ar="تخطيط">Plan</div>
+                    <div class="step-desc" data-en="Set clear objectives, KPIs, and creative direction"
+                        data-ar="وضع أهداف واضحة ومؤشرات أداء واتجاه إبداعي">Set clear objectives, KPIs, and creative
+                        direction</div>
+                </div>
+                <div class="process-step reveal">
+                    <div class="step-circle">3</div>
+                    <div class="step-title" data-en="Create" data-ar="إنشاء">Create</div>
+                    <div class="step-desc" data-en="Craft ideas, design assets, build environments"
+                        data-ar="صياغة الأفكار وتصميم الأصول وبناء البيئات">Craft ideas, design assets, build
+                        environments</div>
+                </div>
+                <div class="process-step reveal">
+                    <div class="step-circle">4</div>
+                    <div class="step-title" data-en="Amplify" data-ar="تضخيم">Amplify</div>
+                    <div class="step-desc" data-en="Launch, optimize in real time, measure impact"
+                        data-ar="الإطلاق والتحسين الفوري وقياس التأثير">Launch, optimize in real time, measure impact
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BRANDS MARQUEE -->
+        <section class="brands-section">
+            <div class="reveal" style="text-align:center; margin-bottom: 40px;">
+                <div class="section-label" style="color: rgba(255,192,0,0.7)" data-en="Brands We've Worked With"
+                    data-ar="علامات عملنا معها">Brands We've Worked With</div>
+            </div>
+            <div style="overflow: hidden;">
+                <div class="brands-scroll-track" id="brandsTrack">
+                    <span class="brand-pill">Avalon</span>
+                    <span class="brand-pill">Omniful</span>
+                    <span class="brand-pill">Mapei</span>
+                    <span class="brand-pill">Club Nuweiba</span>
+                    <span class="brand-pill">Namitha Spa</span>
+                    <span class="brand-pill">Naama Bay Yacht Club</span>
+                    <span class="brand-pill">Mano Food</span>
+                    <span class="brand-pill">Horizon Engineering</span>
+                    <span class="brand-pill">Geer</span>
+                    <span class="brand-pill">مدهامتان</span>
+                    <span class="brand-pill">Flying Carpet</span>
+                    <span class="brand-pill">Merkato</span>
+                    <span class="brand-pill">Warm Wellness</span>
+                    <span class="brand-pill">سواعد الخليج</span>
+                    <span class="brand-pill">Anfasic Otour</span>
+                    <span class="brand-pill">Bella Derma</span>
+                    <span class="brand-pill">Sam Hijab</span>
+                    <span class="brand-pill">Caravela Restaurant</span>
+                    <span class="brand-pill">Extra Care Pharmacy</span>
+                    <span class="brand-pill">OMC</span>
+                    <!-- duplicate for seamless loop -->
+                    <span class="brand-pill">Avalon</span>
+                    <span class="brand-pill">Omniful</span>
+                    <span class="brand-pill">Mapei</span>
+                    <span class="brand-pill">Club Nuweiba</span>
+                    <span class="brand-pill">Namitha Spa</span>
+                    <span class="brand-pill">Naama Bay Yacht Club</span>
+                    <span class="brand-pill">Mano Food</span>
+                    <span class="brand-pill">Horizon Engineering</span>
+                    <span class="brand-pill">Geer</span>
+                    <span class="brand-pill">مدهامتان</span>
+                    <span class="brand-pill">Flying Carpet</span>
+                    <span class="brand-pill">Merkato</span>
+                    <span class="brand-pill">Warm Wellness</span>
+                    <span class="brand-pill">سواعد الخليج</span>
+                    <span class="brand-pill">Anfasic Otour</span>
+                    <span class="brand-pill">Bella Derma</span>
+                    <span class="brand-pill">Sam Hijab</span>
+                    <span class="brand-pill">Caravela Restaurant</span>
+                    <span class="brand-pill">Extra Care Pharmacy</span>
+                    <span class="brand-pill">OMC</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY ORGTING -->
+        <section class="why-section">
+            <div class="reveal">
+                <div class="section-label" data-en="Why ORGTING?" data-ar="لماذا ORGTING؟">Why ORGTING?</div>
+                <h2 class="section-title" data-en="One partner. Complete transformation."
+                    data-ar="شريك واحد. تحول كامل.">One partner. Complete transformation.</h2>
+            </div>
+            <div class="why-grid stagger">
+                <div class="why-card reveal" data-num="01">
+                    <div class="why-icon">🎯</div>
+                    <h3 data-en="Single Accountability" data-ar="مساءلة واحدة">Single Accountability</h3>
+                    <p data-en="No more blame between agency, consultant, or tech provider. One partner owns it all."
+                        data-ar="لا مزيد من إلقاء اللوم. شريك واحد يملك كل شيء.">No more blame between agency,
+                        consultant, or tech provider. One partner owns it all.</p>
+                </div>
+                <div class="why-card reveal" data-num="02">
+                    <div class="why-icon">🌉</div>
+                    <h3 data-en="Bridge Builders" data-ar="بناة الجسور">Bridge Builders</h3>
+                    <p data-en="We connect Business, Technology, and Marketing — fixing systems and culture simultaneously."
+                        data-ar="نربط الأعمال والتكنولوجيا والتسويق — نصلح الأنظمة والثقافة في آنٍ واحد.">We connect
+                        Business, Technology, and Marketing — fixing systems and culture simultaneously.</p>
+                </div>
+                <div class="why-card reveal" data-num="03">
+                    <div class="why-icon">📊</div>
+                    <h3 data-en="Data-Driven, Human-Led" data-ar="بيانات + إنسانية">Data-Driven, Human-Led</h3>
+                    <p data-en="Numbers guide us, people drive us. Every decision is backed by insight and executed with empathy."
+                        data-ar="الأرقام توجهنا والناس يقودوننا. كل قرار مدعوم بالبيانات ومُنفَّذ بالتعاطف.">Numbers
+                        guide us, people drive us. Every decision is backed by insight and executed with empathy.</p>
+                </div>
+                <div class="why-card reveal" data-num="04">
+                    <div class="why-icon">🚀</div>
+                    <h3 data-en="Execution-Obsessed" data-ar="مهووسون بالتنفيذ">Execution-Obsessed</h3>
+                    <p data-en="From strategy to implementation, we deliver. Ideas without execution are just dreams — we turn both into reality."
+                        data-ar="من الاستراتيجية إلى التنفيذ، نُسلِّم. الأفكار بدون تنفيذ مجرد أحلام — نحول كليهما إلى واقع.">
+                        From strategy to implementation, we deliver. Ideas without execution are just dreams — we turn
+                        both into reality.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- REACH -->
+        <section class="reach-section">
+            <div class="reveal">
+                <div class="section-label" data-en="Our Reach" data-ar="انتشارنا">Our Reach</div>
+                <h2 class="section-title" data-en="From Egypt to the GCC and beyond"
+                    data-ar="من مصر إلى الخليج وما بعده">From Egypt to the GCC and beyond</h2>
+                <p class="section-sub"
+                    data-en="On-ground teams in every market, navigating local regulations and cultural nuances — delivering identical quality across the region."
+                    data-ar="فرق محلية في كل سوق، تتعامل مع اللوائح والفروق الثقافية — وتقدم جودة متطابقة عبر المنطقة.">
+                    On-ground teams in every market, navigating local regulations and cultural nuances — delivering
+                    identical quality across the region.</p>
+            </div>
+            <div class="reach-countries">
+                <div class="country-badge"><span class="country-flag">🇪🇬</span><span data-en="Egypt"
+                        data-ar="مصر">Egypt</span></div>
+                <div class="country-badge"><span class="country-flag">🇦🇪</span><span data-en="UAE"
+                        data-ar="الإمارات">UAE</span></div>
+                <div class="country-badge"><span class="country-flag">🇸🇦</span><span data-en="Saudi Arabia"
+                        data-ar="السعودية">Saudi Arabia</span></div>
+                <div class="country-badge"><span class="country-flag">🇧🇭</span><span data-en="Bahrain"
+                        data-ar="البحرين">Bahrain</span></div>
+                <div class="country-badge"><span class="country-flag">🇶🇦</span><span data-en="Qatar"
+                        data-ar="قطر">Qatar</span></div>
+                <div class="country-badge"><span class="country-flag">🇰🇼</span><span data-en="Kuwait"
+                        data-ar="الكويت">Kuwait</span></div>
+                <div class="country-badge"><span class="country-flag">🇴🇲</span><span data-en="Oman"
+                        data-ar="عُمان">Oman</span></div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <div class="cta-bg"></div>
+            <div class="reveal">
+                <h2 data-en="Ready to move from chaos to clarity?" data-ar="مستعد للانتقال من الفوضى إلى الوضوح؟">Ready
+                    to move from chaos<br>to clarity?</h2>
+                <p data-en="Let's organize your vision." data-ar="دعنا ننظم رؤيتك.">Let's organize your vision.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn-primary" onclick="showPage('contact')">
+                        <span data-en="Book a Strategy Call" data-ar="احجز استشارة استراتيجية">Book a Strategy
+                            Call</span> →
+                    </a>
+                    <a href="#" class="btn-secondary" onclick="showPage('contact')">
+                        <span data-en="Request a Proposal" data-ar="اطلب عرض سعر">Request a Proposal</span>
+                    </a>
+                    <a href="https://wa.me/201019998198" class="whatsapp-btn" target="_blank">
+                        <span style="font-size:20px">💬</span>
+                        <span data-en="WhatsApp Now" data-ar="واتساب الآن">WhatsApp Now</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-brand">
+                <a href="#" class="nav-logo" onclick="showPage('home')" style="text-decoration:none;">
+                    <div class="nav-logo-icon" style="border-color: rgba(255,255,255,0.3)"></div>
+                    <span class="nav-logo-text" style="color:white">ORGTI<span>N</span>G</span>
+                </a>
+                <p data-en="Organization Worth Promoting. Building scalable systems and sustainable brands — from Egypt to the world."
+                    data-ar="منظمة تستحق الترقية. نبني أنظمة قابلة للتطوير وعلامات تجارية مستدامة — من مصر إلى العالم.">
+                    Organization Worth Promoting. Building scalable systems and sustainable brands — from Egypt to the
+                    world.</p>
+            </div>
+            <div class="footer-col">
+                <h4 data-en="Services" data-ar="الخدمات">Services</h4>
+                <ul>
+                    <li><a href="#" onclick="showPage('services')" data-en="Strategic Management"
+                            data-ar="الإدارة الاستراتيجية">Strategic Management</a></li>
+                    <li><a href="#" onclick="showPage('services')" data-en="Organization Design"
+                            data-ar="تصميم المنظمة">Organization Design</a></li>
+                    <li><a href="#" onclick="showPage('services')" data-en="Marketing" data-ar="التسويق">Marketing</a>
+                    </li>
+                    <li><a href="#" onclick="showPage('services')" data-en="Website Design"
+                            data-ar="تصميم المواقع">Website Design</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 data-en="Company" data-ar="الشركة">Company</h4>
+                <ul>
+                    <li><a href="#" onclick="showPage('about')" data-en="About ORGTING" data-ar="من نحن">About
+                            ORGTING</a></li>
+                    <li><a href="#" onclick="showPage('cases')" data-en="Case Studies" data-ar="أعمالنا">Case
+                            Studies</a></li>
+                    <li><a href="#" onclick="showPage('contact')" data-en="Contact" data-ar="تواصل معنا">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 data-en="Contact" data-ar="تواصل">Contact</h4>
+                <ul>
+                    <li><a href="mailto:info@orgting.com">info@orgting.com</a></li>
+                    <li><a href="tel:+201019998198">+20 101 999 8198</a></li>
+                    <li><a href="tel:+201129750092">+20 112 975 0092</a></li>
+                </ul>
+            </div>
+        </footer>
+        <div class="footer-bottom">
+            <p>© 2026 <span class="gold-text">ORGTING</span>. All rights reserved.</p>
+            <p data-en="Organization Worth Promoting" data-ar="منظمة تستحق الترقية"
+                style="color: rgba(255,255,255,0.2); font-size: 12px;">Organization Worth Promoting</p>
+        </div>
+    </div>
+
+    <!-- ════════════════════════════════════════════════ ABOUT PAGE -->
+    <div class="page" id="page-about">
+        <section class="about-hero">
+            <div class="hero-bg-anim">
+                <div class="hero-orb hero-orb-1" style="opacity:0.08"></div>
+                <div class="hero-grid" style="opacity:0.4"></div>
+            </div>
+            <div style="position:relative;z-index:2">
+                <div class="section-label" data-en="About ORGTING" data-ar="عن ORGTING">About ORGTING</div>
+                <h1 data-en="We build organizations worth promoting." data-ar="نبني منظمات تستحق الترقية.">We build
+                    organizations<br>worth promoting.</h1>
+                <p data-en="Specialized in integrated operational excellence and marketing solutions. Our depth is not in executing projects alone — it's in building scalable systems and sustainable brands."
+                    data-ar="متخصصون في حلول التميز التشغيلي والتسويقي المتكاملة. عمقنا الحقيقي ليس في تنفيذ المشاريع فقط، بل في بناء أنظمة قابلة للتطوير وعلامات تجارية مستدامة.">
+                    Specialized in integrated operational excellence and marketing solutions. Our depth is not in
+                    executing projects alone — it's in building scalable systems and sustainable brands.</p>
+            </div>
+        </section>
+
+        <div class="about-vm">
+            <div class="vm-card reveal-left">
+                <div class="vm-label" data-en="Our Vision" data-ar="رؤيتنا">Our Vision</div>
+                <h2 data-en="Egypt to the world." data-ar="من مصر إلى العالم.">Egypt to the world.</h2>
+                <p data-en="To create a network of successful entities that drive positive changes in the global business community starting from Egypt to the whole world."
+                    data-ar="إنشاء شبكة من الكيانات الناجحة التي تدفع بالتغيير الإيجابي في مجتمع الأعمال العالمي، بدءاً من مصر إلى العالم كله.">
+                    To create a network of successful entities that drive positive changes in the global business
+                    community starting from Egypt to the whole world.</p>
+            </div>
+            <div class="vm-card reveal-right">
+                <div class="vm-label" data-en="Our Mission" data-ar="مهمتنا">Our Mission</div>
+                <h2 data-en="Empower. Every day." data-ar="تمكين. كل يوم.">Empower. Every day.</h2>
+                <p data-en="To empower professionals and businesses every day through innovative Marketing, Organizational Development, and Strategic Management solutions that build long-term growth and stability."
+                    data-ar="تمكين المحترفين والشركات يومياً من خلال حلول تسويقية مبتكرة وتطوير تنظيمي وإدارة استراتيجية تبني نمواً واستقراراً طويل الأجل.">
+                    To empower professionals and businesses every day through innovative Marketing, Organizational
+                    Development, and Strategic Management solutions that build long-term growth and stability.</p>
+            </div>
+        </div>
+
+        <section class="values-section">
+            <div class="reveal">
+                <div class="section-label" data-en="Core Values" data-ar="قيمنا الجوهرية">Core Values</div>
+                <h2 class="section-title" data-en="What drives every decision" data-ar="ما يحرك كل قرار">What drives
+                    every decision</h2>
+            </div>
+            <div class="values-grid stagger">
+                <div class="value-item reveal">
+                    <div class="value-num">01</div>
+                    <div class="value-title" data-en="Insight-Led Organization" data-ar="منظمة قائمة على الرؤية">
+                        Insight-Led Organization</div>
+                    <div class="value-desc"
+                        data-en="Every strategy begins with deep understanding of the market, the audience, and the business reality."
+                        data-ar="كل استراتيجية تبدأ بفهم عميق للسوق والجمهور وحقيقة الأعمال.">Every strategy begins with
+                        deep understanding of the market, the audience, and the business reality.</div>
+                </div>
+                <div class="value-item reveal">
+                    <div class="value-num">02</div>
+                    <div class="value-title" data-en="Strategic-Led Creativity" data-ar="إبداع موجه بالاستراتيجية">
+                        Strategic-Led Creativity</div>
+                    <div class="value-desc"
+                        data-en="Creativity without direction is noise. We make creativity serve strategy — not the other way around."
+                        data-ar="الإبداع بدون اتجاه ضجيج. نجعل الإبداع يخدم الاستراتيجية وليس العكس.">Creativity without
+                        direction is noise. We make creativity serve strategy — not the other way around.</div>
+                </div>
+                <div class="value-item reveal">
+                    <div class="value-num">03</div>
+                    <div class="value-title" data-en="Operational Precision" data-ar="الدقة التشغيلية">Operational
+                        Precision</div>
+                    <div class="value-desc"
+                        data-en="Details matter. Systems matter. The gap between good and great is found in the discipline of execution."
+                        data-ar="التفاصيل مهمة. الأنظمة مهمة. الفجوة بين الجيد والعظيم تكمن في انضباط التنفيذ.">Details
+                        matter. Systems matter. The gap between good and great is found in the discipline of execution.
+                    </div>
+                </div>
+                <div class="value-item reveal">
+                    <div class="value-num">04</div>
+                    <div class="value-title" data-en="Partnership Mindset" data-ar="عقلية الشراكة">Partnership Mindset
+                    </div>
+                    <div class="value-desc"
+                        data-en="We don't work for clients — we work with them. Their success is ours, their challenges are ours."
+                        data-ar="نحن لا نعمل للعملاء — نعمل معهم. نجاحهم نجاحنا، تحدياتهم تحدياتنا.">We don't work for
+                        clients — we work with them. Their success is ours, their challenges are ours.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-section">
+            <div class="reveal">
+                <div class="section-label" data-en="Our Team" data-ar="فريقنا">Our Team</div>
+                <h2 class="section-title" data-en="A multidisciplinary force" data-ar="قوة متعددة التخصصات">A
+                    multidisciplinary force</h2>
+                <p class="section-sub"
+                    data-en="We speak Business, Technology, and Creativity fluently. Our team brings together six distinct disciplines under one roof — and one vision."
+                    data-ar="نتحدث الأعمال والتكنولوجيا والإبداع بطلاقة. فريقنا يجمع ستة تخصصات مختلفة تحت سقف واحد — ورؤية واحدة.">
+                    We speak Business, Technology, and Creativity fluently. Our team brings together six distinct
+                    disciplines under one roof — and one vision.</p>
+            </div>
+            <div class="team-tags">
+                <span class="team-tag" data-en="Strategic Management Experts"
+                    data-ar="خبراء الإدارة الاستراتيجية">Strategic Management Experts</span>
+                <span class="team-tag" data-en="Organizational Development Specialists"
+                    data-ar="متخصصو التطوير التنظيمي">Organizational Development Specialists</span>
+                <span class="team-tag" data-en="ERP & Digital System Consultants"
+                    data-ar="مستشارو ERP والأنظمة الرقمية">ERP & Digital System Consultants</span>
+                <span class="team-tag" data-en="Marketing Strategists" data-ar="استراتيجيو التسويق">Marketing
+                    Strategists</span>
+                <span class="team-tag" data-en="Performance Analysts" data-ar="محللو الأداء">Performance Analysts</span>
+                <span class="team-tag" data-en="Content & Branding Experts"
+                    data-ar="خبراء المحتوى والعلامة التجارية">Content & Branding Experts</span>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="cta-bg"></div>
+            <div class="reveal">
+                <h2 data-en="Ready to align your internal backbone with your external impact?"
+                    data-ar="مستعد لمواءمة عمودك الداخلي مع أثرك الخارجي؟">Ready to align your<br>internal backbone?
+                </h2>
+                <p data-en="Let's organize your vision." data-ar="دعنا ننظم رؤيتك.">Let's organize your vision.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn-primary" onclick="showPage('contact')"><span data-en="Get in Touch"
+                            data-ar="تواصل معنا">Get in Touch</span> →</a>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="footer-brand">
+                <a href="#" class="nav-logo" onclick="showPage('home')">
+                    <div class="nav-logo-icon" style="border-color: rgba(255,255,255,0.3)"></div>
+                    <span class="nav-logo-text" style="color:white">ORGTI<span>N</span>G</span>
+                </a>
+                <p data-en="Organization Worth Promoting." data-ar="منظمة تستحق الترقية.">Organization Worth Promoting.
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4 data-en="Services" data-ar="الخدمات">Services</h4>
+                <ul>
+                    <li><a href="#" onclick="showPage('services')" data-en="Strategic Management"
+                            data-ar="الإدارة الاستراتيجية">Strategic Management</a></li>
+                    <li><a href="#" onclick="showPage('services')" data-en="Organization Design"
+                            data-ar="تصميم المنظمة">Organization Design</a></li>
+                    <li><a href="#" onclick="showPage('services')" data-en="Marketing" data-ar="التسويق">Marketing</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 data-en="Company" data-ar="الشركة">Company</h4>
+                <ul>
+                    <li><a href="#" onclick="showPage('about')" data-en="About" data-ar="من نحن">About</a></li>
+                    <li><a href="#" onclick="showPage('cases')" data-en="Case Studies" data-ar="أعمالنا">Case
+                            Studies</a></li>
+                    <li><a href="#" onclick="showPage('contact')" data-en="Contact" data-ar="تواصل">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 data-en="Contact" data-ar="تواصل">Contact</h4>
+                <ul>
+                    <li><a href="mailto:info@orgting.com">info@orgting.com</a></li>
+                    <li><a href="tel:+201019998198">+20 101 999 8198</a></li>
+                </ul>
+            </div>
+        </footer>
+        <div class="footer-bottom">
+            <p>© 2026 <span class="gold-text">ORGTING</span>. All rights reserved.</p>
+        </div>
+    </div>
+
+    <!-- ════════════════════════════════════════════════ SERVICES PAGE -->
+    <div class="page" id="page-services">
+        <section class="services-hero">
+            <div class="hero-bg-anim">
+                <div class="hero-orb hero-orb-1" style="opacity:0.08"></div>
+                <div class="hero-grid" style="opacity:0.4"></div>
+            </div>
+            <div style="position:relative;z-index:2">
+                <div class="section-label" data-en="Our Services" data-ar="خدماتنا">Our Services</div>
+                <h1 data-en="Systems that create clarity at every level." data-ar="أنظمة تخلق الوضوح في كل المستويات.">
+                    Systems that create clarity<br>at every level.</h1>
+                <p data-en="Four integrated service pillars designed to fix structural disconnection and build scalable, sustainable businesses."
+                    data-ar="أربعة محاور خدمية متكاملة لإصلاح الانفصال الهيكلي وبناء أعمال قابلة للتطوير ومستدامة.">Four
+                    integrated service pillars designed to fix structural disconnection and build scalable, sustainable
+                    businesses.</p>
+            </div>
+        </section>
+
+        <div class="service-detail-grid">
+
+            <!-- STRATEGIC MANAGEMENT -->
+            <div class="service-detail">
+                <div class="sd-content">
+                    <div class="sd-num">01</div>
+                    <div class="section-label" data-en="Business Services" data-ar="خدمات الأعمال">Business Services
+                    </div>
+                    <h2 data-en="Strategic Management" data-ar="الإدارة الاستراتيجية">Strategic Management</h2>
+                    <p data-en="We transform your gut feelings into a calculated legacy — moving you from the exhaustion of daily chaos to the quiet confidence of intentional growth."
+                        data-ar="نحول حدسك إلى إرث محسوب — ننقلك من إرهاق الفوضى اليومية إلى ثقة هادئة في النمو المتعمد.">
+                        We transform your gut feelings into a calculated legacy — moving you from the exhaustion of
+                        daily chaos to the quiet confidence of intentional growth.</p>
+                    <div class="steps-list">
+                        <div class="step-item">
+                            <div class="step-badge">1</div>
+                            <div class="step-content">
+                                <h4 data-en="Strategic Analysis" data-ar="التحليل الاستراتيجي">Strategic Analysis</h4>
+                                <p data-en="The diagnostic phase — we dissect your current reality, analyze strengths, weaknesses, opportunities, and threats."
+                                    data-ar="مرحلة التشخيص — نشرح واقعك الحالي ونحلل نقاط القوة والضعف والفرص والتهديدات.">
+                                    The diagnostic phase — we dissect your current reality, analyze strengths,
+                                    weaknesses, opportunities, and threats.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-badge">2</div>
+                            <div class="step-content">
+                                <h4 data-en="Strategic Direction" data-ar="الاتجاه الاستراتيجي">Strategic Direction</h4>
+                                <p data-en="Setting the compass — whether aggressive expansion, niche focus, or market stabilization."
+                                    data-ar="ضبط البوصلة — سواء توسع عدواني أو تركيز على مجال أو استقرار السوق.">Setting
+                                    the compass — whether aggressive expansion, niche focus, or market stabilization.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-badge">3</div>
+                            <div class="step-content">
+                                <h4 data-en="Entity Building" data-ar="بناء الكيان">Entity Building</h4>
+                                <p data-en="The identity phase — Vision, Mission, Values. The ultimate constitution guiding every decision."
+                                    data-ar="مرحلة الهوية — الرؤية والمهمة والقيم. الدستور الذي يوجه كل قرار.">The
+                                    identity phase — Vision, Mission, Values. The ultimate constitution guiding every
+                                    decision.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-badge">4</div>
+                            <div class="step-content">
+                                <h4 data-en="Organization Development" data-ar="التطوير التنظيمي">Organization
+                                    Development</h4>
+                                <p data-en="Preparing your team and culture to embrace strategy and handle growth and change."
+                                    data-ar="تهيئة فريقك وثقافتك لاحتضان الاستراتيجية والتعامل مع النمو والتغيير.">
+                                    Preparing your team and culture to embrace strategy and handle growth and change.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-badge">5</div>
+                            <div class="step-content">
+                                <h4>OGSM</h4>
+                                <p data-en="Dreams-to-numbers — Objectives, Goals, Strategies, Measures on a single actionable page."
+                                    data-ar="من الأحلام إلى الأرقام — الأهداف والغايات والاستراتيجيات والمقاييس في صفحة واحدة قابلة للتنفيذ.">
+                                    Dreams-to-numbers — Objectives, Goals, Strategies, Measures on a single actionable
+                                    page.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-badge">6</div>
+                            <div class="step-content">
+                                <h4 data-en="Evaluation & Control" data-ar="التقييم والسيطرة">Evaluation & Control</h4>
+                                <p data-en="Rigorous monitoring, early deviation detection, immediate course correction."
+                                    data-ar="مراقبة صارمة واكتشاف مبكر للانحراف وتصحيح فوري للمسار.">Rigorous
+                                    monitoring, early deviation detection, immediate course correction.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sd-visual dark-bg-v">
+                    <div class="visual-diagram">
+                        <div class="vd-row">
+                            <div class="vd-box gold" data-en="Strategic Analysis" data-ar="التحليل الاستراتيجي">
+                                Strategic Analysis</div>
+                        </div>
+                        <div class="vd-arrow">↓</div>
+                        <div class="vd-row">
+                            <div class="vd-box outline" data-en="Strategic Direction" data-ar="الاتجاه الاستراتيجي">
+                                Strategic Direction</div>
+                        </div>
+                        <div class="vd-arrow">↓</div>
+                        <div class="vd-row">
+                            <div class="vd-box outline" data-en="Entity Building" data-ar="بناء الكيان">Entity Building
+                            </div>
+                        </div>
+                        <div class="vd-arrow">↓</div>
+                        <div class="vd-row">
+                            <div class="vd-box outline" data-en="Organization Development" data-ar="التطوير التنظيمي">
+                                Organization Development</div>
+                        </div>
+                        <div class="vd-arrow">↓</div>
+                        <div class="vd-row">
+                            <div class="vd-box outline">OGSM</div>
+                        </div>
+                        <div class="vd-arrow">↓</div>
+                        <div class="vd-row">
+                            <div class="vd-box gold" data-en="Evaluation & Control" data-ar="التقييم والسيطرة">
+                                Evaluation & Control</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ORGANIZATION DESIGN -->
+            <div class="service-detail">
+                <div class="sd-visual gray-bg-v">
+                    <div class="visual-diagram">
+                        <div class="vd-row">
+                            <div class="vd-box dark" style="background:#232323;color:#ffc000" data-en="CEO / Leadership"
+                                data-ar="القيادة">CEO / Leadership</div>
+                        </div>
+                        <div class="vd-arrow" style="color:#232323">↓</div>
+                        <div class="vd-row" style="gap:8px">
+                            <div class="vd-box" style="background:#232323;color:rgba(255,192,0,0.8);font-size:11px"
+                                data-en="Strategy" data-ar="الاستراتيجية">Strategy</div>
+                            <div class="vd-box" style="background:#232323;color:rgba(255,192,0,0.8);font-size:11px"
+                                data-en="Operations" data-ar="التشغيل">Operations</div>
+                            <div class="vd-box" style="background:#232323;color:rgba(255,192,0,0.8);font-size:11px"
+                                data-en="Marketing" data-ar="التسويق">Marketing</div>
+                        </div>
+                        <div class="vd-arrow" style="color:#232323">↓</div>
+                        <div class="vd-row">
+                            <div class="vd-box" style="background:#ffc000;color:#232323;font-weight:800"
+                                data-en="Aligned Systems" data-ar="أنظمة متوافقة">Aligned Systems</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sd-content">
+                    <div class="sd-num">02</div>
+                    <div class="section-label" data-en="Business Services" data-ar="خدمات الأعمال">Business Services
+                    </div>
+                    <h2 data-en="Organization Design" data-ar="تصميم المنظمة">Organization Design</h2>
+                    <p data-en="We build the internal engine that allows your company to breathe and grow. Experience the 'click' when a system finally works perfectly, and you become the observer — not the bottleneck."
+                        data-ar="نبني المحرك الداخلي الذي يتيح لشركتك التنفس والنمو. اشعر بـ'النقرة' عندما يعمل النظام بشكل مثالي وتصبح المراقب لا العائق.">
+                        We build the internal engine that allows your company to breathe and grow. Experience the
+                        'click' when a system finally works perfectly, and you become the observer — not the bottleneck.
+                    </p>
+                    <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:32px">
+                        <li style="display:flex;gap:12px;align-items:flex-start;font-size:15px">
+                            <span style="color:var(--gold);font-weight:800;flex-shrink:0">→</span>
+                            <span data-en="Workflow restructuring and process mapping"
+                                data-ar="إعادة هيكلة سير العمل ورسم العمليات">Workflow restructuring and process
+                                mapping</span>
+                        </li>
+                        <li style="display:flex;gap:12px;align-items:flex-start;font-size:15px">
+                            <span style="color:var(--gold);font-weight:800;flex-shrink:0">→</span>
+                            <span data-en="Accountability systems and KPI frameworks"
+                                data-ar="أنظمة المساءلة وأطر مؤشرات الأداء">Accountability systems and KPI
+                                frameworks</span>
+                        </li>
+                        <li style="display:flex;gap:12px;align-items:flex-start;font-size:15px">
+                            <span style="color:var(--gold);font-weight:800;flex-shrink:0">→</span>
+                            <span data-en="Leadership alignment and culture design"
+                                data-ar="مواءمة القيادة وتصميم الثقافة">Leadership alignment and culture design</span>
+                        </li>
+                        <li style="display:flex;gap:12px;align-items:flex-start;font-size:15px">
+                            <span style="color:var(--gold);font-weight:800;flex-shrink:0">→</span>
+                            <span data-en="ERP system integration and digital transformation"
+                                data-ar="تكامل أنظمة ERP والتحول الرقمي">ERP system integration and digital
+                                transformation</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="btn-primary" onclick="showPage('contact')" style="display:inline-flex">
+                        <span data-en="Request a Consultation" data-ar="اطلب استشارة">Request a Consultation</span> →
+                    </a>
+                </div>
+            </div>
+
+            <!-- MARKETING -->
+            <div class="service-detail">
+                <div class="sd-content">
+                    <div class="sd-num">03</div>
+                    <div class="section-label" data-en="Business Services" data-ar="خدمات الأعمال">Business Services
+                    </div>
+                    <h2 data-en="Marketing Solutions" data-ar="حلول التسويق">Marketing Solutions</h2>
+                    <p data-en="To be seen in the market and outpace competitors — you need more than ads. You need a complete marketing ecosystem aligned with your operations."
+                        data-ar="لتُرى في السوق وتتخطى المنافسين — تحتاج أكثر من إعلانات. تحتاج منظومة تسويقية متكاملة متوافقة مع تشغيلك.">
+                        To be seen in the market and outpace competitors — you need more than ads. You need a complete
+                        marketing ecosystem aligned with your operations.</p>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px">
+                        <div
+                            style="padding:20px;border-radius:12px;background:var(--gray-light);border:1px solid var(--gray-mid)">
+                            <div style="font-size:20px;margin-bottom:8px">🎯</div>
+                            <div style="font-size:14px;font-weight:700;margin-bottom:6px" data-en="Brand Strategy"
+                                data-ar="استراتيجية العلامة">Brand Strategy</div>
+                            <div style="font-size:13px;color:var(--gray-text)"
+                                data-en="Positioning, identity, and messaging that sets you apart."
+                                data-ar="التمركز والهوية والرسائل التي تميزك.">Positioning, identity, and messaging that
+                                sets you apart.</div>
+                        </div>
+                        <div
+                            style="padding:20px;border-radius:12px;background:var(--gray-light);border:1px solid var(--gray-mid)">
+                            <div style="font-size:20px;margin-bottom:8px">📝</div>
+                            <div style="font-size:14px;font-weight:700;margin-bottom:6px" data-en="Content Marketing"
+                                data-ar="تسويق المحتوى">Content Marketing</div>
+                            <div style="font-size:13px;color:var(--gray-text)"
+                                data-en="Stories that build trust, authority, and community."
+                                data-ar="قصص تبني الثقة والسلطة والمجتمع.">Stories that build trust, authority, and
+                                community.</div>
+                        </div>
+                        <div
+                            style="padding:20px;border-radius:12px;background:var(--gray-light);border:1px solid var(--gray-mid)">
+                            <div style="font-size:20px;margin-bottom:8px">📊</div>
+                            <div style="font-size:14px;font-weight:700;margin-bottom:6px"
+                                data-en="Performance Marketing" data-ar="التسويق الأدائي">Performance Marketing</div>
+                            <div style="font-size:13px;color:var(--gray-text)"
+                                data-en="ATL, BTL, and digital — measured, optimized, scaled."
+                                data-ar="التسويق التقليدي والرقمي — مقاس ومحسّن وموسّع.">ATL, BTL, and digital —
+                                measured, optimized, scaled.</div>
+                        </div>
+                        <div
+                            style="padding:20px;border-radius:12px;background:var(--gray-light);border:1px solid var(--gray-mid)">
+                            <div style="font-size:20px;margin-bottom:8px">🏆</div>
+                            <div style="font-size:14px;font-weight:700;margin-bottom:6px" data-en="Market Positioning"
+                                data-ar="التمركز في السوق">Market Positioning</div>
+                            <div style="font-size:13px;color:var(--gray-text)"
+                                data-en="Own your space. Outmaneuver competitors. Lead."
+                                data-ar="احتل مكانك. تفوّق على المنافسين. قُد.">Own your space. Outmaneuver competitors.
+                                Lead.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sd-visual gold-bg-v">
+                    <div style="text-align:center">
+                        <div style="font-size:80px;margin-bottom:16px">📣</div>
+                        <div style="font-family:'Montserrat',sans-serif;font-size:28px;font-weight:900;color:var(--dark);margin-bottom:8px"
+                            data-en="Be Seen." data-ar="اجعل نفسك مرئياً.">Be Seen.</div>
+                        <div style="font-family:'Montserrat',sans-serif;font-size:28px;font-weight:900;color:var(--dark)"
+                            data-en="Be Heard." data-ar="اجعل صوتك مسموعاً.">Be Heard.</div>
+                        <div style="margin-top:24px;font-size:14px;color:rgba(35,35,35,0.6);line-height:1.6"
+                            data-en="Problem-centric marketing that sells solutions, not services."
+                            data-ar="تسويق مرتكز على المشكلة يبيع الحلول لا الخدمات.">Problem-centric marketing<br>that
+                            sells solutions, not services.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WEBSITE DESIGN -->
+            <div class="service-detail">
+                <div class="sd-visual dark-bg-v">
+                    <div style="width:100%">
+                        <div
+                            style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;overflow:hidden">
+                            <div
+                                style="background:rgba(255,255,255,0.08);padding:12px 16px;display:flex;align-items:center;gap:8px">
+                                <div style="width:10px;height:10px;border-radius:50%;background:rgba(255,75,75,0.6)">
+                                </div>
+                                <div style="width:10px;height:10px;border-radius:50%;background:rgba(255,165,0,0.6)">
+                                </div>
+                                <div style="width:10px;height:10px;border-radius:50%;background:rgba(75,200,75,0.6)">
+                                </div>
+                                <div style="margin-left:12px;font-size:12px;color:rgba(255,255,255,0.4)">orgting.com
+                                </div>
+                            </div>
+                            <div style="padding:20px">
+                                <div
+                                    style="background:rgba(255,192,0,0.15);border-radius:8px;padding:12px;margin-bottom:12px">
+                                    <div style="font-size:11px;color:var(--gold);font-weight:700" data-en="HERO SECTION"
+                                        data-ar="القسم الرئيسي">HERO SECTION</div>
+                                </div>
+                                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px">
+                                    <div style="background:rgba(255,255,255,0.05);border-radius:6px;padding:10px;font-size:10px;color:rgba(255,255,255,0.5)"
+                                        data-en="Services" data-ar="الخدمات">Services</div>
+                                    <div style="background:rgba(255,255,255,0.05);border-radius:6px;padding:10px;font-size:10px;color:rgba(255,255,255,0.5)"
+                                        data-en="About" data-ar="عن الشركة">About</div>
+                                </div>
+                                <div style="background:rgba(255,192,0,0.2);border-radius:6px;padding:8px;font-size:10px;color:var(--gold);font-weight:700;text-align:center"
+                                    data-en="CONVERSION CTA" data-ar="دعوة للتحرك">CONVERSION CTA</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sd-content">
+                    <div class="sd-num">04</div>
+                    <div class="section-label" data-en="Digital Services" data-ar="الخدمات الرقمية">Digital Services ✨
+                        New</div>
+                    <h2 data-en="Website Design & Development" data-ar="تصميم وتطوير المواقع">Website Design &
+                        Development</h2>
+                    <p data-en="Scalable, UX-driven digital systems built with ORGTING thinking: structure, system, and conversion — not just a website, but a growth engine."
+                        data-ar="أنظمة رقمية قابلة للتطوير وموجهة بتجربة المستخدم مبنية بتفكير ORGTING: هيكل ونظام وتحويل — ليس مجرد موقع، بل محرك للنمو.">
+                        Scalable, UX-driven digital systems built with ORGTING thinking: structure, system, and
+                        conversion — not just a website, but a growth engine.</p>
+                    <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:32px">
+                        <li style="display:flex;gap:12px;align-items:flex-start;font-size:15px">
+                            <span style="color:var(--gold);font-weight:800;flex-shrink:0">→</span>
+                            <span data-en="Strategic UX architecture before design"
+                                data-ar="هندسة تجربة مستخدم استراتيجية قبل التصميم">Strategic UX architecture before
+                                design</span>
+                        </li>
+                        <li style="display:flex;gap:12px;align-items:flex-start;font-size:15px">
+                            <span style="color:var(--gold);font-weight:800;flex-shrink:0">→</span>
+                            <span data-en="Portfolio-based proof display systems"
+                                data-ar="أنظمة عرض محفظة الأعمال">Portfolio-based proof display systems</span>
+                        </li>
+                        <li style="display:flex;gap:12px;align-items:flex-start;font-size:15px">
+                            <span style="color:var(--gold);font-weight:800;flex-shrink:0">→</span>
+                            <span data-en="Conversion-optimized landing pages"
+                                data-ar="صفحات هبوط محسّنة للتحويل">Conversion-optimized landing pages</span>
+                        </li>
+                        <li style="display:flex;gap:12px;align-items:flex-start;font-size:15px">
+                            <span style="color:var(--gold);font-weight:800;flex-shrink:0">→</span>
+                            <span data-en="Multi-language support (AR/EN) with RTL"
+                                data-ar="دعم متعدد اللغات (عربي/إنجليزي) مع RTL">Multi-language support (AR/EN) with
+                                RTL</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="btn-primary" onclick="showPage('contact')" style="display:inline-flex">
+                        <span data-en="Start Your Project" data-ar="ابدأ مشروعك">Start Your Project</span> →
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <section class="cta-section">
+            <div class="cta-bg"></div>
+            <div class="reveal">
+                <h2 data-en="Which service does your business need?" data-ar="أي خدمة تحتاجها شركتك؟">Which service does
+                    your<br>business need?</h2>
+                <p data-en="Book a free discovery call and we'll diagnose the right fit."
+                    data-ar="احجز مكالمة اكتشاف مجانية وسنحدد الحل المناسب.">Book a free discovery call and we'll
+                    diagnose the right fit.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn-primary" onclick="showPage('contact')">
+                        <span data-en="Book a Strategy Call" data-ar="احجز استشارة استراتيجية">Book a Strategy
+                            Call</span> →
+                    </a>
+                    <a href="https://wa.me/201019998198" class="whatsapp-btn" target="_blank">💬 WhatsApp</a>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="footer-brand">
+                <a href="#" class="nav-logo" onclick="showPage('home')">
+                    <div class="nav-logo-icon" style="border-color: rgba(255,255,255,0.3)"></div>
+                    <span class="nav-logo-text" style="color:white">ORGTI<span>N</span>G</span>
+                </a>
+                <p data-en="Organization Worth Promoting." data-ar="منظمة تستحق الترقية.">Organization Worth Promoting.
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4 data-en="Pages" data-ar="الصفحات">Pages</h4>
+                <ul>
+                    <li><a href="#" onclick="showPage('home')" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                    <li><a href="#" onclick="showPage('about')" data-en="About" data-ar="من نحن">About</a></li>
+                    <li><a href="#" onclick="showPage('cases')" data-en="Case Studies" data-ar="أعمالنا">Case
+                            Studies</a></li>
+                    <li><a href="#" onclick="showPage('contact')" data-en="Contact" data-ar="تواصل">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 data-en="Contact" data-ar="تواصل">Contact</h4>
+                <ul>
+                    <li><a href="mailto:info@orgting.com">info@orgting.com</a></li>
+                    <li><a href="tel:+201019998198">+20 101 999 8198</a></li>
+                </ul>
+            </div>
+            <div class="footer-col"></div>
+        </footer>
+        <div class="footer-bottom">
+            <p>© 2026 <span class="gold-text">ORGTING</span>. All rights reserved.</p>
+        </div>
+    </div>
+
+    <!-- ════════════════════════════════════════════════ CASE STUDIES PAGE -->
+    <div class="page" id="page-cases">
+        <section class="cases-hero">
+            <div class="hero-bg-anim">
+                <div class="hero-orb hero-orb-1" style="opacity:0.08"></div>
+                <div class="hero-grid" style="opacity:0.4"></div>
+            </div>
+            <div style="position:relative;z-index:2">
+                <div class="section-label" data-en="Case Studies" data-ar="دراسات الحالة">Case Studies</div>
+                <h1 data-en="Real systems. Real transformation. Real results."
+                    data-ar="أنظمة حقيقية. تحول حقيقي. نتائج حقيقية.">Real systems.<br>Real transformation.<br>Real
+                    results.</h1>
+                <p data-en="ORGTING doesn't just offer services — it builds actual systems. Here's the proof."
+                    data-ar="ORGTING لا تقدم خدمات فحسب — بل تبني أنظمة حقيقية. هنا الإثبات.">ORGTING doesn't just offer
+                    services — it builds actual systems. Here's the proof.</p>
+            </div>
+        </section>
+
+        <div class="cases-grid stagger">
+            <div class="case-card reveal">
+                <span class="case-industry" data-en="Retail & F&B" data-ar="التجزئة والمطاعم">Retail & F&B</span>
+                <h3 data-en="Retail Brand Expansion System" data-ar="نظام توسع علامة التجزئة">Retail Brand Expansion
+                    System</h3>
+                <div class="before-after">
+                    <div class="ba-card before">
+                        <div class="ba-label" data-en="Before" data-ar="قبل">Before</div>
+                        <div class="ba-text"
+                            data-en="Scattered marketing, no operational structure, brand inconsistency across locations."
+                            data-ar="تسويق متشتت، لا هيكل تشغيلي، تناقض في العلامة التجارية بين المواقع.">Scattered
+                            marketing, no operational structure, brand inconsistency across locations.</div>
+                    </div>
+                    <div class="ba-card after">
+                        <div class="ba-label" data-en="After" data-ar="بعد">After</div>
+                        <div class="ba-text"
+                            data-en="Full strategic + operational redesign. Scalable system, unified brand, ready for franchise."
+                            data-ar="إعادة تصميم استراتيجي وتشغيلي كامل. نظام قابل للتوسع وعلامة موحدة جاهزة للامتياز.">
+                            Full strategic + operational redesign. Scalable system, unified brand, ready for franchise.
+                        </div>
+                    </div>
+                </div>
+                <div class="case-outcome">
+                    <div class="outcome-stat">3x</div>
+                    <div class="outcome-desc" data-en="Revenue growth within 18 months of system implementation"
+                        data-ar="نمو في الإيرادات خلال 18 شهراً من تطبيق النظام">Revenue growth within 18 months of
+                        system implementation</div>
+                </div>
+            </div>
+
+            <div class="case-card reveal">
+                <span class="case-industry" data-en="Hospitality & Tourism" data-ar="الضيافة والسياحة">Hospitality &
+                    Tourism</span>
+                <h3 data-en="Resort Digital Presence Overhaul" data-ar="إعادة بناء الحضور الرقمي للمنتجع">Resort Digital
+                    Presence Overhaul</h3>
+                <div class="before-after">
+                    <div class="ba-card before">
+                        <div class="ba-label" data-en="Before" data-ar="قبل">Before</div>
+                        <div class="ba-text"
+                            data-en="Outdated online presence, no brand story, low direct bookings, heavy dependency on OTAs."
+                            data-ar="حضور رقمي قديم، لا قصة للعلامة، حجوزات مباشرة منخفضة، اعتماد كبير على منصات الحجز.">
+                            Outdated online presence, no brand story, low direct bookings, heavy dependency on OTAs.
+                        </div>
+                    </div>
+                    <div class="ba-card after">
+                        <div class="ba-label" data-en="After" data-ar="بعد">After</div>
+                        <div class="ba-text"
+                            data-en="New brand identity, full content strategy, digital marketing system, 40% increase in direct bookings."
+                            data-ar="هوية علامة جديدة، استراتيجية محتوى كاملة، نظام تسويق رقمي، زيادة 40% في الحجوزات المباشرة.">
+                            New brand identity, full content strategy, digital marketing system, 40% increase in direct
+                            bookings.</div>
+                    </div>
+                </div>
+                <div class="case-outcome">
+                    <div class="outcome-stat">40%</div>
+                    <div class="outcome-desc" data-en="Increase in direct bookings, reducing OTA commission costs"
+                        data-ar="زيادة في الحجوزات المباشرة وتقليل عمولات منصات الحجز">Increase in direct bookings,
+                        reducing OTA commission costs</div>
+                </div>
+            </div>
+
+            <div class="case-card reveal">
+                <span class="case-industry" data-en="Engineering & Construction" data-ar="الهندسة والبناء">Engineering &
+                    Construction</span>
+                <h3 data-en="Engineering Firm Strategic Restructure" data-ar="إعادة الهيكلة الاستراتيجية لشركة هندسية">
+                    Engineering Firm Strategic Restructure</h3>
+                <div class="before-after">
+                    <div class="ba-card before">
+                        <div class="ba-label" data-en="Before" data-ar="قبل">Before</div>
+                        <div class="ba-text"
+                            data-en="Rapid growth creating internal chaos, missing project deadlines, no KPI visibility, leadership bottleneck."
+                            data-ar="نمو سريع يخلق فوضى داخلية، تأخير في المواعيد، لا رؤية لـ KPIs، عنق الزجاجة في القيادة.">
+                            Rapid growth creating internal chaos, missing project deadlines, no KPI visibility,
+                            leadership bottleneck.</div>
+                    </div>
+                    <div class="ba-card after">
+                        <div class="ba-label" data-en="After" data-ar="بعد">After</div>
+                        <div class="ba-text"
+                            data-en="OGSM framework, accountability system, delegated authority model. CEO freed from daily operations."
+                            data-ar="إطار OGSM، نظام مساءلة، نموذج تفويض صلاحيات. تحرير الرئيس التنفيذي من العمليات اليومية.">
+                            OGSM framework, accountability system, delegated authority model. CEO freed from daily
+                            operations.</div>
+                    </div>
+                </div>
+                <div class="case-outcome">
+                    <div class="outcome-stat">98%</div>
+                    <div class="outcome-desc"
+                        data-en="On-time project delivery after implementing the accountability framework"
+                        data-ar="تسليم المشاريع في الوقت المحدد بعد تطبيق إطار المساءلة">On-time project delivery after
+                        implementing the accountability framework</div>
+                </div>
+            </div>
+
+            <div class="case-card reveal">
+                <span class="case-industry" data-en="Wellness & Healthcare" data-ar="الصحة والعافية">Wellness &
+                    Healthcare</span>
+                <h3 data-en="Wellness Center Community System" data-ar="نظام مجتمع مركز العافية">Wellness Center
+                    Community System</h3>
+                <div class="before-after">
+                    <div class="ba-card before">
+                        <div class="ba-label" data-en="Before" data-ar="قبل">Before</div>
+                        <div class="ba-text"
+                            data-en="No brand differentiation, high client churn, no retention system, relying on word-of-mouth only."
+                            data-ar="لا تمايز للعلامة، خسارة عالية للعملاء، لا نظام استبقاء، اعتماد كلي على التوصيات الشفهية.">
+                            No brand differentiation, high client churn, no retention system, relying on word-of-mouth
+                            only.</div>
+                    </div>
+                    <div class="ba-card after">
+                        <div class="ba-label" data-en="After" data-ar="بعد">After</div>
+                        <div class="ba-text"
+                            data-en="Brand positioning system, content community, loyalty program, automated follow-up sequences."
+                            data-ar="نظام تمركز العلامة، مجتمع محتوى، برنامج ولاء، تسلسلات متابعة آلية.">Brand
+                            positioning system, content community, loyalty program, automated follow-up sequences.</div>
+                    </div>
+                </div>
+                <div class="case-outcome">
+                    <div class="outcome-stat">65%</div>
+                    <div class="outcome-desc" data-en="Reduction in client churn rate within first 6 months"
+                        data-ar="انخفاض معدل خسارة العملاء خلال أول 6 أشهر">Reduction in client churn rate within first
+                        6 months</div>
+                </div>
+            </div>
+        </div>
+
+        <section style="padding:80px 60px;background:var(--white);text-align:center">
+            <div class="reveal">
+                <div class="section-label" data-en="Brands We've Partnered With" data-ar="علامات شاركناها">Brands We've
+                    Partnered With</div>
+                <h2 class="section-title" style="margin-bottom:48px" data-en="20+ brands. One mission."
+                    data-ar="أكثر من 20 علامة. مهمة واحدة.">20+ brands. One mission.</h2>
+                <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:900px;margin:0 auto">
+                    <span class="team-tag">Avalon</span><span class="team-tag">Omniful</span><span
+                        class="team-tag">Mapei</span>
+                    <span class="team-tag">Club Nuweiba</span><span class="team-tag">Namitha Spa</span><span
+                        class="team-tag">Naama Bay</span>
+                    <span class="team-tag">Mano Food</span><span class="team-tag">Horizon Engineering</span><span
+                        class="team-tag">Geer</span>
+                    <span class="team-tag">مدهامتان</span><span class="team-tag">Flying Carpet</span><span
+                        class="team-tag">Merkato</span>
+                    <span class="team-tag">Warm Wellness</span><span class="team-tag">Anfasic Otour</span><span
+                        class="team-tag">Bella Derma</span>
+                    <span class="team-tag">Sam Hijab</span><span class="team-tag">Caravela</span><span
+                        class="team-tag">Extra Care</span>
+                    <span class="team-tag">OMC</span><span class="team-tag">& Many More</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="cta-bg"></div>
+            <div class="reveal">
+                <h2 data-en="Ready to be our next success story?" data-ar="مستعد لتكون قصة نجاحنا القادمة؟">Ready to be
+                    our next<br>success story?</h2>
+                <div class="cta-buttons" style="margin-top:48px">
+                    <a href="#" class="btn-primary" onclick="showPage('contact')">
+                        <span data-en="Book a Strategy Call" data-ar="احجز استشارة استراتيجية">Book a Strategy
+                            Call</span> →
+                    </a>
+                    <a href="https://wa.me/201019998198" class="whatsapp-btn" target="_blank">💬 WhatsApp</a>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="footer-brand"><a href="#" class="nav-logo" onclick="showPage('home')">
+                    <div class="nav-logo-icon" style="border-color: rgba(255,255,255,0.3)"></div><span
+                        class="nav-logo-text" style="color:white">ORGTI<span>N</span>G</span>
+                </a>
+                <p data-en="Organization Worth Promoting." data-ar="منظمة تستحق الترقية.">Organization Worth Promoting.
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4 data-en="Pages" data-ar="الصفحات">Pages</h4>
+                <ul>
+                    <li><a href="#" onclick="showPage('home')" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                    <li><a href="#" onclick="showPage('about')" data-en="About" data-ar="من نحن">About</a></li>
+                    <li><a href="#" onclick="showPage('services')" data-en="Services" data-ar="الخدمات">Services</a>
+                    </li>
+                    <li><a href="#" onclick="showPage('contact')" data-en="Contact" data-ar="تواصل">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 data-en="Contact" data-ar="تواصل">Contact</h4>
+                <ul>
+                    <li><a href="mailto:info@orgting.com">info@orgting.com</a></li>
+                    <li><a href="tel:+201019998198">+20 101 999 8198</a></li>
+                </ul>
+            </div>
+            <div class="footer-col"></div>
+        </footer>
+        <div class="footer-bottom">
+            <p>© 2026 <span class="gold-text">ORGTING</span>. All rights reserved.</p>
+        </div>
+    </div>
+
+    <!-- ════════════════════════════════════════════════ CONTACT PAGE -->
+    <div class="page" id="page-contact">
+        <div class="contact-page">
+            <div class="contact-left">
+                <div class="contact-left-bg"></div>
+                <h1 data-en="Let's organize your vision." data-ar="دعنا ننظم رؤيتك.">Let's organize<br>your vision.</h1>
+                <p data-en="Ready to move from chaos to clarity? Ready to align your internal backbone with your external impact? Let's talk."
+                    data-ar="مستعد للانتقال من الفوضى إلى الوضوح؟ مستعد لمواءمة عمودك الداخلي مع أثرك الخارجي؟ دعنا نتحدث.">
+                    Ready to move from chaos to clarity? Ready to align your internal backbone with your external
+                    impact? Let's talk.</p>
+                <div class="contact-info">
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">📧</div>
+                        <div class="contact-info-text">
+                            <p data-en="Email" data-ar="البريد الإلكتروني">Email</p>
+                            <a href="mailto:info@orgting.com">info@orgting.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">📞</div>
+                        <div class="contact-info-text">
+                            <p data-en="Phone" data-ar="الهاتف">Phone</p>
+                            <a href="tel:+201019998198">+20 101 999 8198</a>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">📞</div>
+                        <div class="contact-info-text">
+                            <p data-en="Phone 2" data-ar="هاتف 2">Phone 2</p>
+                            <a href="tel:+201129750092">+20 112 975 0092</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="contact-right">
+                <h2 data-en="Send us a message" data-ar="أرسل لنا رسالة">Send us a message</h2>
+                <p class="sub" data-en="We'll get back to you within 24 hours." data-ar="سنرد عليك خلال 24 ساعة.">We'll
+                    get back to you within 24 hours.</p>
+                <div class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label data-en="Full Name" data-ar="الاسم الكامل">Full Name</label>
+                            <input type="text" placeholder="John Smith">
+                        </div>
+                        <div class="form-group">
+                            <label data-en="Company" data-ar="الشركة">Company</label>
+                            <input type="text" placeholder="Acme Corp">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label data-en="Email" data-ar="البريد الإلكتروني">Email</label>
+                            <input type="email" placeholder="you@company.com">
+                        </div>
+                        <div class="form-group">
+                            <label data-en="Phone" data-ar="الهاتف">Phone</label>
+                            <input type="tel" placeholder="+20 10 0000 0000">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label data-en="Service of Interest" data-ar="الخدمة المطلوبة">Service of Interest</label>
+                        <select>
+                            <option value="" data-en="Select a service..." data-ar="اختر خدمة...">Select a service...
+                            </option>
+                            <option data-en="Strategic Management" data-ar="الإدارة الاستراتيجية">Strategic Management
+                            </option>
+                            <option data-en="Organization Design" data-ar="تصميم المنظمة">Organization Design</option>
+                            <option data-en="Marketing Solutions" data-ar="حلول التسويق">Marketing Solutions</option>
+                            <option data-en="Website Design & Development" data-ar="تصميم وتطوير المواقع">Website Design
+                                & Development</option>
+                            <option data-en="Multiple Services" data-ar="خدمات متعددة">Multiple Services</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label data-en="Tell us about your challenge" data-ar="أخبرنا عن تحديك">Tell us about your
+                            challenge</label>
+                        <textarea
+                            placeholder="Describe the chaos you're dealing with, and we'll tell you how we bring clarity..."></textarea>
+                    </div>
+                    <button class="submit-btn" onclick="submitForm(this)">
+                        <span data-en="Send Message" data-ar="إرسال الرسالة">Send Message</span>
+                        <span>→</span>
+                    </button>
+                    <a href="https://wa.me/201019998198" class="whatsapp-btn" target="_blank">
+                        <span style="font-size:20px">💬</span>
+                        <span data-en="Or message us on WhatsApp" data-ar="أو راسلنا على واتساب">Or message us on
+                            WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom" style="background:var(--dark)">
+            <p>© 2026 <span class="gold-text">ORGTING</span>. All rights reserved.</p>
+            <p style="color: rgba(255,255,255,0.2); font-size: 12px;">info@orgting.com</p>
+        </div>
+    </div>
+
+    <script>
+        // ─── STATE ───
+        let currentLang = 'en';
+        let currentPage = 'home';
+
+        // ─── PAGE NAVIGATION ───
+        function showPage(page) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById('page-' + page).classList.add('active');
+            currentPage = page;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            const nav = document.getElementById('navbar');
+            const heroPgs = ['home', 'about', 'services', 'cases', 'contact'];
+            if (heroPgs.includes(page)) {
+                nav.classList.add('dark-bg');
+                nav.classList.remove('scrolled');
+            }
+            checkScroll();
+            setTimeout(initReveal, 100);
+        }
+
+        // ─── NAVBAR SCROLL ───
+        function checkScroll() {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 60) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        }
+        window.addEventListener('scroll', checkScroll);
+
+        // ─── LANGUAGE TOGGLE ───
+        function toggleLang() {
+            currentLang = currentLang === 'en' ? 'ar' : 'en';
+            document.body.classList.toggle('rtl', currentLang === 'ar');
+            document.documentElement.lang = currentLang;
+            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            document.getElementById('langBtn').textContent = currentLang === 'en' ? 'عربي' : 'English';
+
+            document.querySelectorAll('[data-en]').forEach(el => {
+                const txt = el.getAttribute('data-' + currentLang);
+                if (txt) el.textContent = txt;
+            });
+
+            document.querySelectorAll('[placeholder]').forEach(el => {
+                const ar = el.getAttribute('data-ar-placeholder');
+                if (ar && currentLang === 'ar') el.placeholder = ar;
+            });
+        }
+
+        // ─── SCROLL REVEAL ───
+        function initReveal() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        e.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+            document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // ─── FORM SUBMIT ───
+        function submitForm(btn) {
+            const span = btn.querySelector('span');
+            span.textContent = currentLang === 'ar' ? '✓ تم الإرسال!' : '✓ Sent!';
+            btn.style.background = '#639922';
+            btn.style.color = 'white';
+            setTimeout(() => {
+                span.textContent = currentLang === 'ar' ? 'إرسال الرسالة' : 'Send Message';
+                btn.style.background = '';
+                btn.style.color = '';
+            }, 3000);
+        }
+
+        // ─── INIT ───
+        document.addEventListener('DOMContentLoaded', () => {
+            initReveal();
+            checkScroll();
+
+            // Duplicate brands track for seamless loop (already done in HTML)
+            // No-op here
+
+            // Nav links highlight current page
+            document.querySelectorAll('.nav-links a').forEach(a => {
+                a.addEventListener('click', function () {
+                    document.querySelectorAll('.nav-links a').forEach(x => x.style.color = '');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
