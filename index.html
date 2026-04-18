@@ -107,9 +107,10 @@
     </style>
 </head>
 
-<body class="bg-surface font-body text-on-surface selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<body
+    class="bg-surface overflow-x-hidden font-body text-on-surface selection:bg-secondary-fixed selection:text-on-secondary-fixed">
     <!-- TopAppBar -->
-    <nav class="fixed top-0 w-full z-50 bg-surface_bright/80 bg-white backdrop-blur-md shadow-xl shadow-black/10">
+    <nav class="fixed top-0 w-full z-50 bg-surface-bright bg-white backdrop-blur-md shadow-xl shadow-black/10">
         <div class="flex justify-between items-center max-w-7xl mx-auto px-8 h-20">
 
             <!-- Logo -->
@@ -180,80 +181,105 @@
 
         </div>
     </nav>
-    <main class="">
+    <main>
         <!-- Hero Section -->
-        <section class="relative bg-primary-container h-screen flex items-center overflow-hidden">
-            <div class="absolute inset-0 opacity-20 pointer-events-none">
-                <div
-                    class="absolute top-0 right-0 w-[800px] h-[800px] bg-secondary-container/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3">
-                </div>
-                <div
-                    class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-white/5 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4">
-                </div>
-            </div>
-            <div class="max-w-7xl mx-auto px-8 w-full grid grid-cols-12 gap-8 relative z-10">
-                <div class="col-span-12 md:col-span-8 lg:col-span-7">
+        <section class=" relative bg-primary-container min-h-screen flex items-center overflow-hidden">
+
+            <div class="max-w-7xl  mx-auto px-6 sm:px-8 w-full grid grid-cols-12 gap-8 relative z-10">
+
+                <!-- Content -->
+                <div class="col-span-12 lg:col-span-7 ">
+
                     <div
-                        class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-8">
+                        class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-6">
                         <span class="w-2 h-2 rounded-full bg-secondary-container"></span>
-                        <span class="text-white/60 text-xs font-bold tracking-widest uppercase">Systemic
-                            Architecture</span>
+                        <span class="text-white/60 text-xs font-bold tracking-widest uppercase">
+                            Systemic Architecture
+                        </span>
                     </div>
+
                     <h1
-                        class="text-white font-headline text-6xl md:text-8xl font-black leading-[0.9] tracking-tighter mb-8">
+                        class="text-white font-headline text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black leading-[0.95] tracking-tighter mb-6">
                         From Chaos <br />
                         <span class="text-secondary-container">to Clarity</span>
                     </h1>
-                    <p class="text-surface-variant text-xl md:text-2xl max-w-xl leading-relaxed mb-12 font-light">
+
+                    <p
+                        class="text-surface-variant text-base sm:text-lg md:text-xl max-w-xl leading-relaxed mb-10 font-light">
                         We transform fragmented operations into high-performance structural systems for leaders who
-                        demand precision.
+                        demand
+                        precision.
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-4">
+
+                    <div class="flex flex-col sm:flex-row gap-4 ">
                         <button
-                            class="gold-gradient-cta text-on-secondary-fixed font-bold py-4 px-10 rounded-xl text-lg hover:-translate-y-0.5 transition-all shadow-xl shadow-secondary-container/10">
+                            class="gold-gradient-cta text-on-secondary-fixed  font-bold py-4 px-8  rounded-xl text-sm  hover:-translate-y-0.5 transition-all shadow-xl shadow-secondary-container/10">
                             Book a Strategy Call
                         </button>
+
                         <button
-                            class="bg-white/5 text-white font-semibold py-4 px-10 rounded-xl text-lg border border-white/10 hover:bg-white/10 transition-all">
+                            class="bg-white/5 text-white font-semibold py-4 px-8 sm:px-10 rounded-xl text-sm  border border-white/10 hover:bg-white/10 transition-all">
                             View Case Studies
                         </button>
                     </div>
+
                 </div>
+
+                <!-- Image -->
                 <div class="hidden lg:block lg:col-span-5 relative">
+
                     <div class="absolute inset-0 bg-gradient-to-tr from-primary-container to-transparent z-10"></div>
+
                     <img class="w-full h-full object-cover rounded-2xl grayscale contrast-125 opacity-60"
-                        data-alt="Interior of a modern high-end office with glass partitions, architectural lines, and dramatic lighting on steel and concrete surfaces"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuATkhAmOBwwSLZyqcI6A_KgUH4CHi9FaHGNnY6TyjRG3lZ3DdkIPuz0JNr5zLVRxX-EBklnRtM0k5jwIzQs-mkd1HkjZiDnQjrZiZ-IVEShhmSw_GFz9aHuuj2BPOfsJhpODrU25ii8qk4d-A7VuPgUDvnbpimXVvAeI2hVmuNoTVm6EVKet_rjdBRpnO04qDqWOx1lHIK0TdyTv06DAF-JSQoTfUGnleHH2tdtE5MBOBwplIlaO-9ZQvqJqjEmZZtwDlzZYlVMCPxT" />
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuATkhAmOBwwSLZyqcI6A_KgUH4CHi9FaHGNnY6TyjRG3lZ3DdkIPuz0JNr5zLVRxX-EBklnRtM0k5jwIzQs-mkd1HkjZiDnQjrZiZ-IVEShhmSw_GFz9aHuuj2BPOfsJhpODrU25ii8qk4d-A7VuPgUDvnbpimXVvAeI2hVmuNoTVm6EVKet_rjdBRpnO04qDqWOx1lHIK0TdyTv06DAF-JSQoTfUGnleHH2tdtE5MBOBwplIlaO-9ZQvqJqjEmZZtwDlzZYlVMCPxT"
+                        alt="modern office" />
+
                 </div>
+
             </div>
         </section>
         <!-- Problem Statement -->
-        <section class="py-32 bg-surface">
-            <div class="max-w-7xl mx-auto px-8">
-                <div class="grid grid-cols-12 gap-12 items-end">
+        <section class="py-20 sm:py-28 lg:py-32 bg-surface">
+
+            <div class="max-w-7xl mx-auto px-6 sm:px-8">
+
+                <div class="grid grid-cols-12 gap-8 lg:gap-12 items-start lg:items-end">
+
+                    <!-- Left -->
                     <div class="col-span-12 md:col-span-6">
-                        <span class="text-secondary font-bold tracking-widest uppercase text-sm mb-4 block">The Critical
-                            Gap</span>
+
+                        <span class="text-secondary font-bold tracking-widest uppercase text-xs sm:text-sm mb-4 block">
+                            The Critical Gap
+                        </span>
+
                         <h2
-                            class="text-primary font-headline text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
-                            The Structural <br /> Misalignment.
+                            class="text-primary font-headline text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
+                            The Structural <br />
+                            Misalignment.
                         </h2>
+
                     </div>
+
+                    <!-- Right -->
                     <div class="col-span-12 md:col-span-6">
+
                         <p
-                            class="text-on-surface-variant text-lg leading-relaxed border-l-2 border-secondary-container pl-8">
+                            class="text-on-surface-variant text-base sm:text-lg leading-relaxed border-l-2 border-secondary-container pl-4 sm:pl-6 md:pl-8">
                             Most organizations fail not due to lack of talent, but because of architectural friction.
                             When growth outpaces infrastructure, chaos becomes the default. We identify the invisible
                             fractures in your operation before they become catastrophic breaks.
                         </p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
         <!-- Solution Overview (Bento Grid) -->
         <section class="py-32 bg-surface-container-lowest">
-            <div class="max-w-7xl mx-auto px-8">
+            <div class="  mx-auto px-8">
                 <div class="text-center mb-20">
                     <h2 class="text-primary font-headline text-4xl font-black mb-4">Our Framework</h2>
                     <div class="h-1 w-20 bg-secondary-container mx-auto"></div>
@@ -309,7 +335,7 @@
 
         <!-- NEW Strategic Services Grid -->
         <section class="py-32 bg-gray-100">
-            <div class="max-w-7xl mx-auto px-8">
+            <div class="  mx-auto px-8">
                 <div class="mb-16">
                     <span class="text-secondary font-bold tracking-widest uppercase text-sm mb-4 block">Our
                         Capabilities</span>
@@ -384,7 +410,7 @@
 
         <!-- Service Categories -->
         <section class="py-32 bg-surface">
-            <div class="max-w-7xl mx-auto px-8">
+            <div class="  mx-auto px-8">
                 <div class="flex justify-between items-end mb-16">
                     <div>
                         <span
@@ -448,7 +474,7 @@
 
         <!-- Social Proof -->
         <section class="py-24 bg-surface-container">
-            <div class="max-w-7xl mx-auto px-8">
+            <div class="  mx-auto px-8">
                 <div class="flex flex-col md:flex-row items-center justify-between gap-12">
                     <div class="text-center md:text-left">
                         <div class="text-primary font-headline text-5xl font-black mb-2">40+</div>
